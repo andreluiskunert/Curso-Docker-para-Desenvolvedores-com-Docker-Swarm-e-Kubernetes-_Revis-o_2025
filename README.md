@@ -1,6 +1,5 @@
 # Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025
 Curso completo que ensina Docker do zero, incluindo criação e atualização de imagens, volumes, redes, Docker Compose e YAML. Ideal para iniciantes, apresenta prática com projetos (PHP, JavaScript, Python), comandos Linux, além de orquestração com Docker Swarm e Kubernetes para gerenciamento eficiente de containers.
-# Curso Docker para Desenvolvedores (com Docker Swarm e Kubernetes)
 
 Curso completo de Docker, do básico ao avançado, sem necessidade de conhecimento prévio. Ensina teoria e prática para utilização de Docker em projetos PHP, JavaScript, Python e mais, preparando para o mercado de trabalho.
 
