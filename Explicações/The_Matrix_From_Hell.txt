@@ -1,0 +1,39 @@
+Conhecendo a Matrix from Hell:
+
+A “Matrix from Hell” é um termo bem conhecido no mundo do Docker e Kubernetes, e provavelmente o curso da Hora de Codar vai te mostrar isso logo no início, porque é um conceito essencial para entender por que containers existem.
+
+📌 O que é a Matrix from Hell?
+É uma forma irônica de se referir ao caos de compatibilidade que os desenvolvedores enfrentavam antes do Docker.
+
+Imagina assim:
+
+Você desenvolve sua aplicação na sua máquina com Node.js 20 + MongoDB + Ubuntu 22.04.
+
+O colega de equipe está em Windows + Node.js 18.
+
+O servidor de produção roda em CentOS + Node.js 16.
+
+E, para piorar, cada projeto precisa de uma combinação diferente de bibliotecas, pacotes e versões.
+
+O resultado?
+🔥 Conflitos de dependências, versões quebrando, “na minha máquina funciona” e muito retrabalho.
+
+Essa mistura caótica de ambientes, sistemas operacionais e versões é o que chamaram de Matrix from Hell.
+
+📌 Como o Docker resolve isso?
+O Docker padroniza o ambiente em containers:
+
+Você cria um Dockerfile descrevendo exatamente o que a aplicação precisa (versão do Node, pacotes, libs, etc).
+
+O container roda igualzinho em qualquer lugar: no Windows, Linux, Mac ou no servidor em nuvem.
+
+Sai o “na minha máquina funciona” e entra o funciona em qualquer lugar.
+
+📌 No curso da Hora de Codar
+Eles vão usar esse conceito para mostrar:
+
+Por que containers são necessários.
+
+Como o Docker acaba com a Matrix from Hell.
+
+E depois, como Docker Swarm e Kubernetes ajudam a orquestrar muitos containers em produção (porque um só container não resolve tudo).
