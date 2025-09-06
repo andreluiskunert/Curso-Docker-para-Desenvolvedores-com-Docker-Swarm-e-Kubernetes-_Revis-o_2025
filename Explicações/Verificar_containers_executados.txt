@@ -1,0 +1,43 @@
+Verificar containers executados
+●
+O comando docker ps ou docker container ls exibe quais containers
+estão sendo executados no momento;
+●
+Utilizando a flag -a, temos também todos os containers já executados na
+máquina;
+●
+Este comando é útil para entender o que está sendo executado e
+acontece no nosso ambiente;
+Ex.:
+
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND       CREATED        STATUS                    PORTS     NAMES
+48e9e2f48c2d   ubuntu    "/bin/bash"   14 hours ago   Exited (0) 14 hours ago             relaxed_noyce
+80444b954440   ubuntu    "/bin/bash"   14 hours ago   Exited (0) 14 hours ago             mystifying_golick
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker run -it ubuntu
+root@f859f1202017:/# home
+bash: home: command not found
+root@f859f1202017:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@f859f1202017:/# boot
+bash: boot: command not found
+root@f859f1202017:/# exit
+exit
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS                       PORTS     NAMES
+f859f1202017   ubuntu    "/bin/bash"   38 seconds ago   Exited (127) 4 seconds ago             romantic_lehmann
+48e9e2f48c2d   ubuntu    "/bin/bash"   14 hours ago     Exited (0) 14 hours ago                relaxed_noyce
+80444b954440   ubuntu    "/bin/bash"   14 hours ago     Exited (0) 14 hours ago                mystifying_golick
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker ps 
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker container ls -a
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS                            PORTS     NAMES
+f859f1202017   ubuntu    "/bin/bash"   2 minutes ago   Exited (127) About a minute ago             romantic_lehmann
+48e9e2f48c2d   ubuntu    "/bin/bash"   14 hours ago    Exited (0) 14 hours ago                     relaxed_noyce
+80444b954440   ubuntu    "/bin/bash"   14 hours ago    Exited (0) 14 hours ago                     mystifying_golick
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ 

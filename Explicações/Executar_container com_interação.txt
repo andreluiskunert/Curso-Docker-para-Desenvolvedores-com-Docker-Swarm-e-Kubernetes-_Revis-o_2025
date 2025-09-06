@@ -1,0 +1,43 @@
+Executar container com interação
+●Podemos rodar um container e deixá-lo executando no terminal;
+●Vamos utilizar a flag -it;
+●Desta maneira podemos executar comandos disponíveis no container
+que estamos utilizando o comando run;
+●
+Podemos utilizar a imagem do ubuntu para isso!
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker run -it node
+Unable to find image 'node:latest' locally
+latest: Pulling from library/node
+f014853ae203: Pull complete 
+6d6401b7636b: Pull complete 
+cffef7dc6f99: Pull complete 
+1e6ffe3614ab: Pull complete 
+3a57b4856774: Pull complete 
+401b11ef6dcc: Pull complete 
+1f36d3d25f39: Pull complete 
+1653d34b60a8: Pull complete 
+Digest: sha256:701c8a634cb3ddbc1dc9584725937619716882525356f0989f11816ba3747a22
+Status: Downloaded newer image for node:latest
+Welcome to Node.js v24.7.0.
+Type ".help" for more information.
+> console.log('KKK')
+KKK
+undefined
+> 120*2
+240
+> var x = 120
+undefined
+> console.log(x)
+120
+undefined
+> 
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+> 
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                        PORTS     NAMES
+8c9d2f354157   node      "docker-entrypoint.s…"   3 minutes ago    Exited (0) 15 seconds ago               vigorous_driscoll
+f859f1202017   ubuntu    "/bin/bash"              10 minutes ago   Exited (127) 10 minutes ago             romantic_lehmann
+48e9e2f48c2d   ubuntu    "/bin/bash"              14 hours ago     Exited (0) 14 hours ago                 relaxed_noyce
+80444b954440   ubuntu    "/bin/bash"              14 hours ago     Exited (0) 14 hours ago                 mystifying_golick
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ 
