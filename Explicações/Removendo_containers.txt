@@ -1,0 +1,71 @@
+Removendo containers
+●
+Podemos remover um container da máquina que estamos executando o
+Docker;
+●O comando é docker -rm <id>;
+●Se o container estiver rodando ainda, podemos utilizar a flag -f (force);
+●O container removido não é mais listado em docker ps -a;
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                      PORTS     NAMES
+b33ea1fd6df7   nginx     "/docker-entrypoint.…"   13 minutes ago   Exited (0) 2 minutes ago              nginx_app
+66a2d97c2c4e   nginx     "/docker-entrypoint.…"   28 minutes ago   Exited (0) 19 minutes ago             musing_benz
+9735ec4a2b94   nginx     "/docker-entrypoint.…"   31 minutes ago   Exited (0) 29 minutes ago             epic_dirac
+e744fa31c80e   nginx     "/docker-entrypoint.…"   37 minutes ago   Exited (0) 16 minutes ago             stupefied_gould
+41c2e88dcb0f   nginx     "/docker-entrypoint.…"   40 minutes ago   Exited (0) 37 minutes ago             cool_goldberg
+a791b99f49a0   nginx     "/docker-entrypoint.…"   42 minutes ago   Created                               vigorous_euclid
+0945e2ead538   nginx     "/docker-entrypoint.…"   42 minutes ago   Created                               nice_easley
+0902e66b9231   nginx     "/docker-entrypoint.…"   43 minutes ago   Created                               magical_mendel
+a24f3f84a0fc   nginx     "/docker-entrypoint.…"   51 minutes ago   Exited (0) 44 minutes ago             hardcore_hugle
+05036ca127b7   nginx     "/docker-entrypoint.…"   56 minutes ago   Exited (0) 54 minutes ago             stupefied_solomon
+8c9d2f354157   node      "docker-entrypoint.s…"   12 hours ago     Exited (0) 12 hours ago               vigorous_driscoll
+f859f1202017   ubuntu    "/bin/bash"              12 hours ago     Exited (127) 12 hours ago             romantic_lehmann
+48e9e2f48c2d   ubuntu    "/bin/bash"              26 hours ago     Exited (0) 26 hours ago               relaxed_noyce
+80444b954440   ubuntu    "/bin/bash"              26 hours ago     Exited (0) 26 hours ago               mystifying_golick
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker rm  vigorous_euclid
+vigorous_euclid
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                      PORTS     NAMES
+b33ea1fd6df7   nginx     "/docker-entrypoint.…"   13 minutes ago   Exited (0) 2 minutes ago              nginx_app
+66a2d97c2c4e   nginx     "/docker-entrypoint.…"   29 minutes ago   Exited (0) 20 minutes ago             musing_benz
+9735ec4a2b94   nginx     "/docker-entrypoint.…"   32 minutes ago   Exited (0) 30 minutes ago             epic_dirac
+e744fa31c80e   nginx     "/docker-entrypoint.…"   37 minutes ago   Exited (0) 17 minutes ago             stupefied_gould
+41c2e88dcb0f   nginx     "/docker-entrypoint.…"   41 minutes ago   Exited (0) 38 minutes ago             cool_goldberg
+0945e2ead538   nginx     "/docker-entrypoint.…"   43 minutes ago   Created                               nice_easley
+0902e66b9231   nginx     "/docker-entrypoint.…"   44 minutes ago   Created                               magical_mendel
+a24f3f84a0fc   nginx     "/docker-entrypoint.…"   52 minutes ago   Exited (0) 45 minutes ago             hardcore_hugle
+05036ca127b7   nginx     "/docker-entrypoint.…"   57 minutes ago   Exited (0) 55 minutes ago             stupefied_solomon
+8c9d2f354157   node      "docker-entrypoint.s…"   12 hours ago     Exited (0) 12 hours ago               vigorous_driscoll
+f859f1202017   ubuntu    "/bin/bash"              12 hours ago     Exited (127) 12 hours ago             romantic_lehmann
+48e9e2f48c2d   ubuntu    "/bin/bash"              26 hours ago     Exited (0) 26 hours ago               relaxed_noyce
+80444b954440   ubuntu    "/bin/bash"              26 hours ago     Exited (0) 26 hours ago               mystifying_golick
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker rm 973
+973
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                      PORTS     NAMES
+b33ea1fd6df7   nginx     "/docker-entrypoint.…"   14 minutes ago   Exited (0) 3 minutes ago              nginx_app
+66a2d97c2c4e   nginx     "/docker-entrypoint.…"   29 minutes ago   Exited (0) 20 minutes ago             musing_benz
+e744fa31c80e   nginx     "/docker-entrypoint.…"   38 minutes ago   Exited (0) 18 minutes ago             stupefied_gould
+41c2e88dcb0f   nginx     "/docker-entrypoint.…"   42 minutes ago   Exited (0) 39 minutes ago             cool_goldberg
+0945e2ead538   nginx     "/docker-entrypoint.…"   43 minutes ago   Created                               nice_easley
+0902e66b9231   nginx     "/docker-entrypoint.…"   44 minutes ago   Created                               magical_mendel
+a24f3f84a0fc   nginx     "/docker-entrypoint.…"   52 minutes ago   Exited (0) 46 minutes ago             hardcore_hugle
+05036ca127b7   nginx     "/docker-entrypoint.…"   58 minutes ago   Exited (0) 56 minutes ago             stupefied_solomon
+8c9d2f354157   node      "docker-entrypoint.s…"   12 hours ago     Exited (0) 12 hours ago               vigorous_driscoll
+f859f1202017   ubuntu    "/bin/bash"              12 hours ago     Exited (127) 12 hours ago             romantic_lehmann
+48e9e2f48c2d   ubuntu    "/bin/bash"              26 hours ago     Exited (0) 26 hours ago               relaxed_noyce
+80444b954440   ubuntu    "/bin/bash"              26 hours ago     Exited (0) 26 hours ago               mystifying_golick
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ 
+-> 
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker run -d --name nginx_para_remover nginx
+bd86af610d08dcd82f62e97a4d4db70f26285ad3d793b6ba0d5970d38fdde27f
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS     NAMES
+bd86af610d08   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute   80/tcp    nginx_para_remover
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker rm nginx_para_remover
+Error response from daemon: cannot remove container "/nginx_para_remover": container is running: stop the container before removing or force remove
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker rm nginx_para_remover -f
+nginx_para_remover
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ 

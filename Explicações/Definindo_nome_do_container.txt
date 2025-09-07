@@ -1,0 +1,39 @@
+Definindo nome do container
+●Podemos definir um nome do container com a flag --name;
+●Se não colocamos, recebemos um nome aleatório, o que pode ser um
+problema para uma aplicação profissional;
+●
+A flag run é inserida junto do comando run;
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                               NAMES
+b33ea1fd6df7   nginx     "/docker-entrypoint.…"   12 seconds ago   Up 12 seconds   0.0.0.0:80->80/tcp, :::80->80/tcp   nginx_app
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker stop nginx_app
+nginx_app
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS         PORTS                               NAMES
+b33ea1fd6df7   nginx     "/docker-entrypoint.…"   About a minute ago   Up 5 seconds   0.0.0.0:80->80/tcp, :::80->80/tcp   nginx_app
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker stop nginx_app
+nginx_app
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ 
+->
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                      PORTS     NAMES
+66a2d97c2c4e   nginx     "/docker-entrypoint.…"   13 minutes ago   Exited (0) 4 minutes ago              musing_benz
+9735ec4a2b94   nginx     "/docker-entrypoint.…"   16 minutes ago   Exited (0) 15 minutes ago             epic_dirac
+e744fa31c80e   nginx     "/docker-entrypoint.…"   22 minutes ago   Exited (0) 2 minutes ago              stupefied_gould
+41c2e88dcb0f   nginx     "/docker-entrypoint.…"   25 minutes ago   Exited (0) 23 minutes ago             cool_goldberg
+a791b99f49a0   nginx     "/docker-entrypoint.…"   27 minutes ago   Created                               vigorous_euclid
+0945e2ead538   nginx     "/docker-entrypoint.…"   27 minutes ago   Created                               nice_easley
+0902e66b9231   nginx     "/docker-entrypoint.…"   28 minutes ago   Created                               magical_mendel
+a24f3f84a0fc   nginx     "/docker-entrypoint.…"   36 minutes ago   Exited (0) 29 minutes ago             hardcore_hugle
+05036ca127b7   nginx     "/docker-entrypoint.…"   42 minutes ago   Exited (0) 40 minutes ago             stupefied_solomon
+8c9d2f354157   node      "docker-entrypoint.s…"   12 hours ago     Exited (0) 12 hours ago               vigorous_driscoll
+f859f1202017   ubuntu    "/bin/bash"              12 hours ago     Exited (127) 12 hours ago             romantic_lehmann
+48e9e2f48c2d   ubuntu    "/bin/bash"              26 hours ago     Exited (0) 26 hours ago               relaxed_noyce
+80444b954440   ubuntu    "/bin/bash"              26 hours ago     Exited (0) 26 hours ago               mystifying_golick
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker run -d -p 80:80 --name nginx_app nginx
+b33ea1fd6df78082601bda903192a38a1879978f54b65025768eb32e97d3bddc
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker start nginx_app
+nginx_app
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ 

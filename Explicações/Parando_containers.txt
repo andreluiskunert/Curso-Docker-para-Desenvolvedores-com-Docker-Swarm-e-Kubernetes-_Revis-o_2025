@@ -1,0 +1,39 @@
+Parando containers
+●
+Podemos parar um container com o comando docker stop <id ou
+nome>;
+●
+Desta maneira estaremos liberando recursos que estão sendo gastos pelo
+mesmo;
+●
+Podemos verificar os containers rodando com o comando docker ps;
+Ex.:
+->
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker run -d -p 3000:80 nginx
+9735ec4a2b94221e452425ac37c96ccb36c86b6a5cf0f02fbf7bc1990086eb7b
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ 
+->
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                     NAMES
+9735ec4a2b94   nginx     "/docker-entrypoint.…"   11 seconds ago   Up 11 seconds   0.0.0.0:3000->80/tcp, [::]:3000->80/tcp   epic_dirac
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker stop 9735ec4a2b94
+9735ec4a2b94
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker run -d -p 3000:80 nginx
+66a2d97c2c4e9970702e32844288ff1adae715f1653c16a7336359c7cee14d5c
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ 
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker ps -a 
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                      PORTS                                     NAMES
+66a2d97c2c4e   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute           0.0.0.0:3000->80/tcp, [::]:3000->80/tcp   musing_benz
+9735ec4a2b94   nginx     "/docker-entrypoint.…"   4 minutes ago        Exited (0) 2 minutes ago                                              epic_dirac
+e744fa31c80e   nginx     "/docker-entrypoint.…"   9 minutes ago        Exited (0) 7 minutes ago                                              stupefied_gould
+41c2e88dcb0f   nginx     "/docker-entrypoint.…"   13 minutes ago       Exited (0) 10 minutes ago                                             cool_goldberg
+a791b99f49a0   nginx     "/docker-entrypoint.…"   14 minutes ago       Created                                                               vigorous_euclid
+0945e2ead538   nginx     "/docker-entrypoint.…"   15 minutes ago       Created                                                               nice_easley
+0902e66b9231   nginx     "/docker-entrypoint.…"   16 minutes ago       Created                                                               magical_mendel
+a24f3f84a0fc   nginx     "/docker-entrypoint.…"   24 minutes ago       Exited (0) 17 minutes ago                                             hardcore_hugle
+05036ca127b7   nginx     "/docker-entrypoint.…"   29 minutes ago       Exited (0) 27 minutes ago                                             stupefied_solomon
+8c9d2f354157   node      "docker-entrypoint.s…"   12 hours ago         Exited (0) 12 hours ago                                               vigorous_driscoll
+f859f1202017   ubuntu    "/bin/bash"              12 hours ago         Exited (127) 12 hours ago                                             romantic_lehmann
+48e9e2f48c2d   ubuntu    "/bin/bash"              26 hours ago         Exited (0) 26 hours ago                                               relaxed_noyce
+80444b954440   ubuntu    "/bin/bash"              26 hours ago         Exited (0) 26 hours ago                                               mystifying_golick
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ 

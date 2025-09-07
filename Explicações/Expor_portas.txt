@@ -1,0 +1,52 @@
+Expor portas
+●Os containers de docker não tem conexão com nada de fora deles;
+●Por isso precisamos expor portas, a flag é a -p e podemos fazer assim: -p
+80:80;
+●Desta maneira o container estará acessível na porta 80;
+●Podemos testar este exemplo com o nginx!
+EX.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker stop hardcore_hugle
+hardcore_hugle
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ 
+->
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker run -d -p 80:80 nginx
+a791b99f49a00ffd37905925e21b355a521a2f11f233b4ab890731393e76e2a8
+docker: Error response from daemon: driver failed programming external connectivity on endpoint vigorous_euclid (798f9cfacf71a0503331937b3b4929e3eb22434a7dc37d75bbf3cfb900cb4d73): failed to bind port 0.0.0.0:80/tcp: Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ sudo lsof -i :80
+[sudo] senha para desenvolvedor:        
+COMMAND  PID     USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+apache2 1139     root    4u  IPv6  28133      0t0  TCP *:http (LISTEN)
+apache2 1159 www-data    4u  IPv6  28133      0t0  TCP *:http (LISTEN)
+apache2 1160 www-data    4u  IPv6  28133      0t0  TCP *:http (LISTEN)
+apache2 1161 www-data    4u  IPv6  28133      0t0  TCP *:http (LISTEN)
+apache2 1162 www-data    4u  IPv6  28133      0t0  TCP *:http (LISTEN)
+apache2 1163 www-data    4u  IPv6  28133      0t0  TCP *:http (LISTEN)
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ sudo netstat -tulnp | grep :80
+tcp6       0      0 :::80                   :::*                    OUÇA       1139/apache2        
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ sudo systemctl stop apache2
+sudo systemctl disable apache2
+Synchronizing state of apache2.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install disable apache2
+Removed /etc/systemd/system/multi-user.target.wants/apache2.service.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ sudo systemctl stop nginx
+sudo systemctl disable nginx
+Failed to stop nginx.service: Unit nginx.service not loaded.
+Failed to disable unit: Unit file nginx.service does not exist.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker run -d -p 8080:80 nginx
+41c2e88dcb0f22fbef8e3e267e4f6cd6542f6bae340d3c7678dddf3aef06ee17
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ 
+->
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS                                     NAMES
+e744fa31c80e   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute   0.0.0.0:3000->80/tcp, [::]:3000->80/tcp   stupefied_gould
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker cool_stupefied_gould
+docker: 'cool_stupefied_gould' is not a docker command.
+See 'docker --help'
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker stupefied_gould
+docker: 'stupefied_gould' is not a docker command.
+See 'docker --help'
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker stop  stupefied_gould
+stupefied_gould
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ 

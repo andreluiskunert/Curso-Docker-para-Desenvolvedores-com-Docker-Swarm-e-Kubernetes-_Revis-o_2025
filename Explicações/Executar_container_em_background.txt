@@ -1,0 +1,81 @@
+Executar container em background
+●
+Quando iniciamos um container que persiste, ele fica ocupando o
+terminal;
+●
+Podemos executar um container em background, para não precisar ficar
+com diversas abas de terminal aberto, utilizamos a flag -d (detached);
+●Verificamos containers em background com docker ps também;
+●Podemos utilizar o nginx para este exemplo!
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker run nginx
+Unable to find image 'nginx:latest' locally
+latest: Pulling from library/nginx
+b1badc6e5066: Pull complete 
+a2da0c0f2353: Pull complete 
+e5d9bb0b85cc: Pull complete 
+14a859b5ba24: Pull complete 
+716cdf61af59: Pull complete 
+14e422fd20a0: Pull complete 
+c3741b707ce6: Pull complete 
+Digest: sha256:33e0bbc7ca9ecf108140af6288c7c9d1ecc77548cbfd3952fd8466a75edefe57
+Status: Downloaded newer image for nginx:latest
+/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2025/09/07 00:07:48 [notice] 1#1: using the "epoll" event method
+2025/09/07 00:07:48 [notice] 1#1: nginx/1.29.1
+2025/09/07 00:07:48 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14+deb12u1) 
+2025/09/07 00:07:48 [notice] 1#1: OS: Linux 5.15.0-153-generic
+2025/09/07 00:07:48 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/09/07 00:07:48 [notice] 1#1: start worker processes
+2025/09/07 00:07:48 [notice] 1#1: start worker process 29
+2025/09/07 00:07:48 [notice] 1#1: start worker process 30
+2025/09/07 00:07:48 [notice] 1#1: start worker process 31
+2025/09/07 00:07:48 [notice] 1#1: start worker process 32
+->
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+05036ca127b7   nginx     "/docker-entrypoint.…"   40 seconds ago   Up 39 seconds   80/tcp    stupefied_solomon
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ 
+ obs.:
+   "Caso não parar{desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker stop stupefied_solomon
+stupefied_solomon
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ }
+-->
+no meu caso:
+^C2025/09/07 00:09:50 [notice] 1#1: signal 2 (SIGINT) received, exiting
+2025/09/07 00:09:50 [notice] 29#29: exiting
+2025/09/07 00:09:50 [notice] 32#32: exiting
+2025/09/07 00:09:50 [notice] 32#32: exit
+2025/09/07 00:09:50 [notice] 29#29: exit
+2025/09/07 00:09:50 [notice] 30#30: exiting
+2025/09/07 00:09:50 [notice] 30#30: exit
+2025/09/07 00:09:50 [notice] 31#31: exiting
+2025/09/07 00:09:50 [notice] 31#31: exit
+2025/09/07 00:09:50 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2025/09/07 00:09:50 [notice] 1#1: worker process 32 exited with code 0
+2025/09/07 00:09:50 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/09/07 00:09:50 [notice] 1#1: worker process 29 exited with code 0
+2025/09/07 00:09:50 [notice] 1#1: worker process 30 exited with code 0
+2025/09/07 00:09:50 [notice] 1#1: worker process 31 exited with code 0
+2025/09/07 00:09:50 [notice] 1#1: exit
+->
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker run -d  nginx
+a24f3f84a0fcd6acb03e01d67e153f86440fc096a7c37f420016a11558251ce5
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ 
+->
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS     NAMES
+a24f3f84a0fc   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute   80/tcp    hardcore_hugle
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ 
