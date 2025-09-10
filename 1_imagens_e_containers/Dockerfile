@@ -1,7 +1,7 @@
-FROM node:18
+FROM node:14
 
 # Define diretório de trabalho
-WORKDIR /app
+WORKDIR /src
 
 # Copia apenas os arquivos de dependência
 COPY package*.json ./
