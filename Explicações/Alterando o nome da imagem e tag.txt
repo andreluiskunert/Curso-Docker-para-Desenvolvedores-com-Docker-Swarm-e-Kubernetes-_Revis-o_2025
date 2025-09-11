@@ -1,0 +1,79 @@
+Alterando o nome da imagem e tag
+●Podemos nomear a imagem que criamos;
+●Vamos utilizar o comando docker tag <nome> para isso;
+●Também podemos modificar a tag, que seria como uma versão da
+imagem, semelhante ao git;
+●
+Para inserir a tag utilizamos: docker tag <nome>:<tag>
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+<none>       <none>    fcf16cb98f85   24 hours ago   920MB
+<none>       <none>    0a925b417144   2 days ago     1.1GB
+<none>       <none>    3fb46a6003f1   2 days ago     1.1GB
+<none>       <none>    d4b6e34bcb29   3 days ago     1.1GB
+<none>       <none>    17f68553c73c   3 days ago     1.15GB
+node         latest    0c7eb8906f06   2 weeks ago    1.14GB
+ubuntu       latest    802541663949   3 weeks ago    78.1MB
+python       latest    77f2b24be2b3   4 weeks ago    1.11GB
+nginx        latest    ad5708199ec7   4 weeks ago    192MB
+httpd        latest    199e3a035264   4 weeks ago    117MB
+node         18        b50082bc3670   5 months ago   1.09GB
+node         14        1d12470fa662   2 years ago    912MB
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                                                 NAMES
+b03ccc86ba0b   ad5708199ec7   "/docker-entrypoint.…"   4 minutes ago   Up 4 minutes   80/tcp, 0.0.0.0:4000->3000/tcp, [::]:4000->3000/tcp   meu_node7
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker stop b03c
+b03c
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ 
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker tag b03ccc86ba0b minhaimagem
+Error response from daemon: No such image: b03ccc86ba0b:latest
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker tag b03ccc86ba0b minhaimagem
+Error response from daemon: No such image: b03ccc86ba0b:latest
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ nginx   latest   ad5708199ec7
+Comando 'nginx' não encontrado, mas poder ser instalado com:
+sudo apt install nginx-core    # version 1.18.0-6ubuntu14.7, or
+sudo apt install nginx-extras  # version 1.18.0-6ubuntu14.7
+sudo apt install nginx-light   # version 1.18.0-6ubuntu14.7
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker tag ad5708199ec7 minhaimagem:latest
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+<none>        <none>    fcf16cb98f85   24 hours ago   920MB
+<none>        <none>    0a925b417144   2 days ago     1.1GB
+<none>        <none>    3fb46a6003f1   2 days ago     1.1GB
+<none>        <none>    d4b6e34bcb29   3 days ago     1.1GB
+<none>        <none>    17f68553c73c   3 days ago     1.15GB
+node          latest    0c7eb8906f06   2 weeks ago    1.14GB
+ubuntu        latest    802541663949   3 weeks ago    78.1MB
+python        latest    77f2b24be2b3   4 weeks ago    1.11GB
+minhaimagem   latest    ad5708199ec7   4 weeks ago    192MB
+nginx         latest    ad5708199ec7   4 weeks ago    192MB
+httpd         latest    199e3a035264   4 weeks ago    117MB
+node          18        b50082bc3670   5 months ago   1.09GB
+node          14        1d12470fa662   2 years ago    912MB
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker tag ad5708199ec7 minhaimagem:minhatag
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker images
+REPOSITORY    TAG        IMAGE ID       CREATED        SIZE
+<none>        <none>     fcf16cb98f85   24 hours ago   920MB
+<none>        <none>     0a925b417144   2 days ago     1.1GB
+<none>        <none>     3fb46a6003f1   2 days ago     1.1GB
+<none>        <none>     d4b6e34bcb29   3 days ago     1.1GB
+<none>        <none>     17f68553c73c   3 days ago     1.15GB
+node          latest     0c7eb8906f06   2 weeks ago    1.14GB
+ubuntu        latest     802541663949   3 weeks ago    78.1MB
+python        latest     77f2b24be2b3   4 weeks ago    1.11GB
+minhaimagem   latest     ad5708199ec7   4 weeks ago    192MB
+minhaimagem   minhatag   ad5708199ec7   4 weeks ago    192MB
+nginx         latest     ad5708199ec7   4 weeks ago    192MB
+httpd         latest     199e3a035264   4 weeks ago    117MB
+node          18         b50082bc3670   5 months ago   1.09GB
+node          14         1d12470fa662   2 years ago    912MB
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker tag --help
+
+Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
+Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+Aliases:
+  docker image tag, docker tag
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ 

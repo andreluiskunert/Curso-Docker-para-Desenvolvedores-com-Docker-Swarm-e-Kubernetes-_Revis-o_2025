@@ -1,19 +1,13 @@
-FROM node:14
+FROM node:18
 
-# Define diretório de trabalho
-WORKDIR /src
+WORKDIR /app
 
-# Copia apenas os arquivos de dependência
-COPY package*.json ./
-
-# Instala as dependências
-RUN npm install
-
-# Copia o restante da aplicação
+# Copia todos os arquivos do projeto
 COPY . .
 
-# Expõe a porta usada pela aplicação
+# Instala dependências (caso exista package.json, senão ignora)
+RUN if [ -f package.json ]; then npm install; fi
+
 EXPOSE 3000
 
-# Comando de inicialização
-CMD ["node", "app.js"]
+CMD ["node", "index.js"]
