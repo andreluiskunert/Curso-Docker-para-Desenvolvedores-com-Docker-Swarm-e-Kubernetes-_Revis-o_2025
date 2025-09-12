@@ -1,0 +1,79 @@
+Removendo container após utilizar
+●Um container pode ser automaticamente deletado após sua utilização;
+●Para isso vamos utilizar a flag --rm;
+●O comando seria: docker run --rm <container>;
+●Desta maneira economizamos espaço no computador e deixamos o
+ambiente mais organizado;
+ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ 
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker run d -p 3000:3000 meunode_diferente
+Unable to find image 'd:latest' locally
+docker: Error response from daemon: pull access denied for d, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker run d -p 3000:3000 --name mode_diferente --rm  meunode_diferente
+Unable to find image 'd:latest' locally
+docker: Error response from daemon: pull access denied for d, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker run d -p 3000:3000 --name mode_diferente --rm  meunode_diferente
+Unable to find image 'd:latest' locally
+docker: Error response from daemon: pull access denied for d, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker run d -p 3000:3000 --name mode_diferente --rm meunode_diferente
+Unable to find image 'd:latest' locally
+docker: Error response from daemon: pull access denied for d, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker run -d -p 3000:3000 --name mode_diferente --rm meunode_diferente
+Unable to find image 'meunode_diferente:latest' locally
+docker: Error response from daemon: pull access denied for meunode_diferente, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker build -t meunode_diferente
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+"docker build" requires exactly 1 argument.
+See 'docker build --help'.
+
+Usage:  docker build [OPTIONS] PATH | URL | -
+
+Build an image from a Dockerfile
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker build -t meunode_diferente .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  3.248MB
+Step 1/7 : FROM node:18
+ ---> b50082bc3670
+Step 2/7 : WORKDIR /app
+ ---> Running in bee8dd921205
+ ---> Removed intermediate container bee8dd921205
+ ---> 164bb8d8ca34
+Step 3/7 : COPY package*.json ./
+ ---> 0f3a587c8bbd
+Step 4/7 : RUN npm install
+ ---> Running in 375e0c7353a3
+
+added 68 packages, and audited 69 packages in 3s
+
+16 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+ ---> Removed intermediate container 375e0c7353a3
+ ---> 1ae628efaf94
+Step 5/7 : COPY . .
+ ---> 9533cd0d8e1e
+Step 6/7 : EXPOSE 3000
+ ---> Running in bbe7f0f0cdd1
+ ---> Removed intermediate container bbe7f0f0cdd1
+ ---> 1e450fe514b0
+Step 7/7 : CMD ["npm", "start"]
+ ---> Running in 0bbe8cc80fe2
+ ---> Removed intermediate container 0bbe8cc80fe2
+ ---> dcb23412044b
+Successfully built dcb23412044b
+Successfully tagged meunode_diferente:latest
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker run -d -p 3000:3000 --name mode_diferente --rm meunode_diferente
+a51d31354184bd31e06941422620bf1c79ac40ad211c0b2f54fbc28f93ca6b75
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ 
