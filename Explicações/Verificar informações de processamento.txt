@@ -1,0 +1,91 @@
+Verificar informações de processamento
+●
+Para verificar dados de execução de um container utilizamos: docker top
+<container>
+●
+Desta maneira temos acesso a quando ele foi iniciado, id do processo,
+descrição do comando CMD;
+Ex.:Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker top mode_diferent6
+Error response from daemon: No such container: mode_diferent6
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker ps
+CONTAINER ID   IMAGE               COMMAND                  CREATED         STATUS         PORTS                                                 NAMES
+c911accac4a8   meunode_diferente   "docker-entrypoint.s…"   5 minutes ago   Up 5 minutes   3000/tcp, 0.0.0.0:5000->5000/tcp, :::5000->5000/tcp   mode_diferente6
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker run -d -p 3000:3000 --name node_diferente8  meunode_diferente
+a4ae9009472f45cb6b5c3bedd7885979c79c680b0f791618bee9fc02df492f43
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker ps
+CONTAINER ID   IMAGE               COMMAND                  CREATED         STATUS         PORTS                                                 NAMES
+a4ae9009472f   meunode_diferente   "docker-entrypoint.s…"   3 seconds ago   Up 3 seconds   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp             node_diferente8
+c911accac4a8   meunode_diferente   "docker-entrypoint.s…"   5 minutes ago   Up 5 minutes   3000/tcp, 0.0.0.0:5000->5000/tcp, :::5000->5000/tcp   mode_diferente6
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker top node_diferente8
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+root                13873               13852               1                   13:57               ?                   00:00:00            npm start
+root                13908               13873               0                   13:57               ?                   00:00:00            sh -c node app.js
+root                13909               13908               0                   13:57               ?                   00:00:00            node app.js
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker run -d python
+Unable to find image 'python:latest' locally
+latest: Pulling from library/python
+15b1d8a5ff03: Pull complete 
+22718812f617: Pull complete 
+401a98f7495b: Pull complete 
+ad446e7df19a: Pull complete 
+5d32990caa16: Pull complete 
+a79d633abf9a: Pull complete 
+249a56c8e466: Pull complete 
+Digest: sha256:c1dab8c06c4fe756fd4316f33a2ba4497be09fa106d2cd9782c33ee411193f9c
+Status: Downloaded newer image for python:latest
+59c82e298f171c57fbed04581d35977a8023ae78119211ede4f62f22894a320f
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedoresdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Dockedesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Dockedesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Dockedesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-comdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kudesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetesdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-
+Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ d
+ocker run -it python
+Python 3.13.7 (main, Sep  8 2025, 22:53:40) [GCC 14.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+KeyboardInterrupt
+>>> 
+KeyboardInterrupt
+>>> 
+KeyboardInterrupt
+desenvolvedor@desenvolvedor-ThinkPad
+-T440p:~/Cursos_Hora de Codar/Curso--T440p:~/Cursos_Hora de Codar/Curso-
+Docker-para-Desenvolvedores-com-Dock
+er-Swarm-e-Kubernetes-_Revis-o_2025/
+Curso-Docker-para-Desenvolvedores-co
+m-Docker-Swarm-e-Kubernetes-_Revis-o
+_2025/1_imagens_e_containers$ 
+//
+/tcp   mode_diferente6
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedor
+es-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm
+-e-Kubernetes-_Revis-o_2025/1_imagens_e
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker top serene_napier
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+root                15326               15306               0                   14:02               pts/0               00:00:00            python3
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker top node_diferente8
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+root                13873               13852               0                   13:57               ?                   00:00:00            npm start
+root                13908               13873               0                   13:57               ?                   00:00:00            sh -c node app.js
+root                13909               13908               0                   13:57               ?                   00:00:00            node app.js
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker ps
+CONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS          PORTS                                                 NAMES
+a4ae9009472f   meunode_diferente   "docker-entrypoint.s…"   8 minutes ago    Up 8 minutes    0.0.0.0:3000->3000/tcp, :::3000->3000/tcp             node_diferente8
+c911accac4a8   meunode_diferente   "docker-entrypoint.s…"   14 minutes ago   Up 14 minutes   3000/tcp, 0.0.0.0:5000->5000/tcp, :::5000->5000/tcp   mode_diferente6
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker stop a4a
+a4a
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker stop c911
+c911
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-D
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-D
+ocker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_contdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-D
+ocker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_contdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-D
+ocker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_contdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-D
+ocker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_contdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-D
+ocker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_contdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-D
+ocker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_contdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-D
+ocker                                       -Swar                                       m-e-K                                       ubern                                       etes-      _Revi                                       s-o_2                                       025/1                                       _imag                                       ens_e            _cont                                       desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-D
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-D
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-D
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-D
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-D
+ocker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ 
