@@ -1,0 +1,55 @@
+Baixando e utilizando a imagem
+●
+Para baixar a imagem podemos utilizar o comando docker pull
+<imagem>
+●E depois criar um novo container com docker run <imagem>
+●E pronto! Estaremos utilizando a nossa imagem com um container;
+Ex.:
+Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker push alktecno/nodeteste:novaversao 
+The push refers to repository [docker.io/alktecno/nodeteste]
+07b49d949c20: Layer already exists 
+da94bd55a9ae: Layer already exists 
+260c937f05e1: Layer already exists 
+2bd4e62f3350: Layer already exists 
+d2a991bcab4d: Layer already exists 
+b624aa2d5ea2: Layer already exists 
+d399c9dc306f: Layer already exists 
+84f9fa179c1b: Layer already exists 
+ce84ba212e49: Layer already exists 
+e4dc8cd9ecc8: Layer already exists 
+6428cc293366: Layer already exists 
+2f7436e79a0b: Layer already exists 
+novaversao: digest: sha256:dff4abe5e831ef804048f8ed66966668596d802dec11cd126baef4043b9e2695 size: 2839
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker rmi alktecno/nodeteste:novaversao 
+Untagged: alktecno/nodeteste:novaversao
+Untagged: alktecno/nodeteste@sha256:dff4abe5e831ef804048f8ed66966668596d802dec11cd126baef4043b9e2695
+Deleted: sha256:c31d52adf495b549c714ac8cfc3b95787d2cbd4ff87e31b68034db497bdd08e1
+Deleted: sha256:48f64900d820bb5488382f6e29a19515dec47d5619c1f39ffec4ee86b88c9589
+Deleted: sha256:88ece2f2f3331e6c566f87f43a87207cc23833e9cddadf9f0e5b767a638b54c5
+Deleted: sha256:74bdb56a94dd65a941b5091010d79ae4d23887830bb29e064d937dff2060ca25
+Deleted: sha256:6c5f5657259ed790dcbca87f3097e9781a5848d1d99011b67a590638833b37bd
+Deleted: sha256:aad8f592585079b3e0458db16bcfad5e295ee947deadb88525588dd8b5597f4c
+Deleted: sha256:b6f7016a4181ec5862adff89d6316ef227f690e4a83f46294e2d9aa0805ec256
+Deleted: sha256:71af0acbd868fde02ddc5e20066e16aee30ba9d17143fc9bba812ee5ec6d36f2
+Deleted: sha256:aaff9d025ccc4d6e59030e942d6934ab8042c0cdb5475f4e097b03391aec8e54
+Deleted: sha256:e3fff9114e1d17685835e24c796ec1e0508ab9787c24828d2bca0217f6d41f1c
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker pull  alktecno/nodeteste:novaversao 
+novaversao: Pulling from alktecno/nodeteste
+3e6b9d1a9511: Already exists 
+37927ed901b1: Already exists 
+79b2f47ad444: Already exists 
+e23f099911d6: Already exists 
+cda7f44f2bdd: Already exists 
+c6b30c3f1696: Already exists 
+3697be50c98b: Already exists 
+461077a72fb7: Already exists 
+fcf7ac94daa8: Pull complete 
+3e71679b5224: Pull complete 
+c1639cd3fa4b: Pull complete 
+0132ca26509d: Pull complete 
+Digest: sha256:dff4abe5e831ef804048f8ed66966668596d802dec11cd126baef4043b9e2695
+Status: Downloaded newer image for alktecno/nodeteste:novaversao
+docker.io/alktecno/nodeteste:novaversao
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker run --name testando_imagem -p 3000:3000 -d  alktecno/nodeteste:novaversao 
+662b263116707d8083e4be3494aa6196a51352e726f191600293fd86e06d98db
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ 

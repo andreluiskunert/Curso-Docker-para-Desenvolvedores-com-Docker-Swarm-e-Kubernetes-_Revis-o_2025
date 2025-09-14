@@ -1,0 +1,83 @@
+Enviando atualização de imagem
+●Para enviar uma atualização vamos primeiramente fazer o build;
+●Trocando a tag da imagem para a versão atualizada;
+●Depois vamos fazer um push novamente para o repositório;
+●Assim todas as versões estarão disponíveis para serem utilizadas;
+ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker pull alktecno/nodeteste
+Using default tag: latest
+latest: Pulling from alktecno/nodeteste
+Digest: sha256:157c3942c32ba06e535402275a60c33963041618a7c070d1dc2f342ec887cea7
+Status: Downloaded newer image for alktecno/nodeteste:latest
+docker.io/alktecno/nodeteste:latest
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker images
+REPOSITORY           TAG        IMAGE ID       CREATED        SIZE
+alktecno/nodeteste   latest     13d88ae49723   8 hours ago    1.1GB
+meunode_diferente    latest     13d88ae49723   8 hours ago    1.1GB
+<none>               <none>     dcb23412044b   26 hours ago   1.1GB
+node                 latest     0c7eb8906f06   2 weeks ago    1.14GB
+ubuntu               latest     802541663949   3 weeks ago    78.1MB
+python               latest     77f2b24be2b3   4 weeks ago    1.11GB
+minhaimagem          minhatag   ad5708199ec7   4 weeks ago    192MB
+nginx                latest     ad5708199ec7   4 weeks ago    192MB
+httpd                latest     199e3a035264   5 weeks ago    117MB
+node                 18         b50082bc3670   5 months ago   1.09GB
+node                 14         1d12470fa662   2 years ago    912MB
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker build -t alktecno/nodeteste:novaversao .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  3.248MB
+Step 1/7 : FROM node:18
+ ---> b50082bc3670
+Step 2/7 : WORKDIR /src
+ ---> Running in 01d45930378b
+ ---> Removed intermediate container 01d45930378b
+ ---> aaff9d025ccc
+Step 3/7 : COPY package*.json ./
+ ---> b6f7016a4181
+Step 4/7 : RUN npm install
+ ---> Running in c917010eccf3
+
+added 68 packages, and audited 69 packages in 3s
+
+16 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.6.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.0
+npm notice To update run: npm install -g npm@11.6.0
+npm notice
+ ---> Removed intermediate container c917010eccf3
+ ---> 6c5f5657259e
+Step 5/7 : COPY . .
+ ---> 88ece2f2f333
+Step 6/7 : EXPOSE 3000
+ ---> Running in 68d59d1025ba
+ ---> Removed intermediate container 68d59d1025ba
+ ---> 48f64900d820
+Step 7/7 : CMD ["npm", "start"]
+ ---> Running in 78d1af8f5f91
+ ---> Removed intermediate container 78d1af8f5f91
+ ---> c31d52adf495
+Successfully built c31d52adf495
+Successfully tagged alktecno/nodeteste:novaversao
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker push alktecno/nodeteste:novaversao 
+The push refers to repository [docker.io/alktecno/nodeteste]
+07b49d949c20: Pushed 
+da94bd55a9ae: Pushed 
+260c937f05e1: Pushed 
+2bd4e62f3350: Pushed 
+d2a991bcab4d: Layer already exists 
+b624aa2d5ea2: Layer already exists 
+d399c9dc306f: Layer already exists 
+84f9fa179c1b: Layer already exists 
+ce84ba212e49: Layer already exists 
+e4dc8cd9ecc8: Layer already exists 
+6428cc293366: Layer already exists 
+2f7436e79a0b: Layer already exists 
+novaversao: digest: sha256:dff4abe5e831ef804048f8ed66966668596d802dec11cd126baef4043b9e2695 size: 2839
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ 

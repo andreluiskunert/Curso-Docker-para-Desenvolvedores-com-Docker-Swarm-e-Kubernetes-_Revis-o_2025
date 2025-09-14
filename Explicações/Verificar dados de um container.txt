@@ -1,0 +1,19 @@
+Verificar dados de um container
+●
+Para verificar diversas informações como: id, data de criação, imagem e
+muito mais;
+●Utilizamos o comando docker inspect <container>
+●Desta maneira conseguimos entender como o container está configurado;
+ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-p
+ara-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-par
+a-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_contai
+ners$ 
+CONTAINER ID   NAME              CPU %     MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O        PIDS
+46c386f0c944   node_diferente9   0.00%     40.27MiB / 7.434GiB   0.53%     7.13kB / 0B   52.6MB / 4.1kB   19
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ docker run -d -p 3000:3000 --name node_diferente9  meunode_diferente
+46c386f0c9446b9e62e6f025edc9a70a1af82611c8714c07deb7665e4a02aff6
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/docker-compose-test$ 
+
+context canceled
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ 

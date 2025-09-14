@@ -1,0 +1,116 @@
+Enviando imagem para o Docker Hub
+●
+Para enviar uma imagem nossa ao Docker Hub utilizamos o comando
+docker push <imagem>;
+●
+Porém antes vamos precisar criar o repositório para a mesma no site do
+Hub;
+●
+Também será necessário estar autenticado;
+ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker login
+
+USING WEB-BASED LOGIN
+To sign in with credentials on the command line, use 'docker login -u <username>'
+
+Your one-time device confirmation code is: NQTV-TWFM
+Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+Waiting for authentication in the browser…
+WARNING! Your password will be stored unencrypted in /home/desenvolvedor/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credential-stores
+
+Login Succeeded
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker logout
+Removing login credentials for https://index.docker.io/v1/
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ 
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker build -t alktecno/nodeteste .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  3.248MB
+Step 1/7 : FROM node:18
+ ---> b50082bc3670
+Step 2/7 : WORKDIR /app
+ ---> Using cache
+ ---> 164bb8d8ca34
+Step 3/7 : COPY package*.json ./
+ ---> Using cache
+ ---> a0b8580825a1
+Step 4/7 : RUN npm install
+ ---> Using cache
+ ---> 248602ae0c5d
+Step 5/7 : COPY . .
+ ---> Using cache
+ ---> b14acae4c016
+Step 6/7 : EXPOSE 3000
+ ---> Using cache
+ ---> a7af08279fc5
+Step 7/7 : CMD ["npm", "start"]
+ ---> Using cache
+ ---> 13d88ae49723
+Successfully built 13d88ae49723
+Successfully tagged alktecno/nodeteste:latest
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker push alktecno/nodeteste 
+Using default tag: latest
+The push refers to repository [docker.io/alktecno/nodeteste]
+f5860c4fe40d: Preparing 
+3b7e049fb951: Preparing 
+f928693d50ff: Preparing 
+5f2da8a62e5c: Preparing 
+d2a991bcab4d: Preparing 
+b624aa2d5ea2: Waiting 
+d399c9dc306f: Waiting 
+84f9fa179c1b: Waiting 
+ce84ba212e49: Waiting 
+e4dc8cd9ecc8: Waiting 
+6428cc293366: Waiting 
+2f7436e79a0b: Waiting 
+denied: requested access to the resource is denied
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker push alktecno/nodeteste 
+Using default tag: latest
+The push refers to repository [docker.io/alktecno/nodeteste]
+f5860c4fe40d: Pushed 
+3b7e049fb951: Pushed 
+f928693d50ff: Pushed 
+5f2da8a62e5c: Pushed 
+d2a991bcab4d: Mounted from library/node 
+b624aa2d5ea2: Mounted from library/node 
+d399c9dc306f: Mounted from library/node 
+84f9fa179c1b: Mounted from library/node 
+ce84ba212e49: Mounted from library/node 
+e4dc8cd9ecc8: Mounted from library/node 
+6428cc293366: Mounted from library/node 
+2f7436e79a0b: Mounted from library/node 
+latest: digest: sha256:157c3942c32ba06e535402275a60c33963041618a7c070d1dc2f342ec887cea7 size: 2839
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker pull alktecno/nodeteste
+Using default tag: latest
+latest: Pulling from alktecno/nodeteste
+Digest: sha256:157c3942c32ba06e535402275a60c33963041618a7c070d1dc2f342ec887cea7
+Status: Image is up to date for alktecno/nodeteste:latest
+docker.io/alktecno/nodeteste:latest
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker rmi alktecno/nodeteste
+Untagged: alktecno/nodeteste:latest
+Untagged: alktecno/nodeteste@sha256:157c3942c32ba06e535402275a60c33963041618a7c070d1dc2f342ec887cea7
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker pull alktecno/nodeteste
+Using default tag: latest
+latest: Pulling from alktecno/nodeteste
+Digest: sha256:157c3942c32ba06e535402275a60c33963041618a7c070d1dc2f342ec887cea7
+Status: Downloaded newer image for alktecno/nodeteste:latest
+docker.io/alktecno/nodeteste:latest
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ docker images
+REPOSITORY           TAG        IMAGE ID       CREATED        SIZE
+alktecno/nodeteste   latest     13d88ae49723   8 hours ago    1.1GB
+meunode_diferente    latest     13d88ae49723   8 hours ago    1.1GB
+<none>               <none>     dcb23412044b   26 hours ago   1.1GB
+node                 latest     0c7eb8906f06   2 weeks ago    1.14GB
+ubuntu               latest     802541663949   3 weeks ago    78.1MB
+python               latest     77f2b24be2b3   4 weeks ago    1.11GB
+minhaimagem          minhatag   ad5708199ec7   4 weeks ago    192MB
+nginx                latest     ad5708199ec7   4 weeks ago    192MB
+httpd                latest     199e3a035264   5 weeks ago    117MB
+node                 18         b50082bc3670   5 months ago   1.09GB
+node                 14         1d12470fa662   2 years ago    912MB
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/1_imagens_e_containers$ 
