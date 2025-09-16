@@ -1,0 +1,266 @@
+Volumes anônimos
+●
+Podemos criar um volume anônimo (anonymous) da seguinte maneira:
+docker run -v /data
+●Onde /data será o diretório que contém o volume anônimo;
+●E este container estará atrelado ao volume anônimo;
+●Com o comando docker volume ls, podemos ver todos os volumes do
+nosso ambiente;
+ex.:
+Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker run -d -p 80:80 --name phpmessages_container2 --rm -v /data  phpmessages 
+e93a561237b2ab3e10b1d417462b1bb1fa1066b5e2995141c5ff3b14d146d130
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker ps
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS          PORTS                               NAMES
+e93a561237b2   phpmessages   "docker-php-entrypoi…"   15 seconds ago   Up 15 seconds   0.0.0.0:80->80/tcp, :::80->80/tcp   phpmessages_container2
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker volume ls
+DRIVER    VOLUME NAME
+local     f2745b7456ea3f33e68efcee658d87869d6058826d4ceea0d663f84176cdab5e
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker inspect phpmessages_container2
+[
+    {
+        "Id": "e93a561237b2ab3e10b1d417462b1bb1fa1066b5e2995141c5ff3b14d146d130",
+        "Created": "2025-09-16T23:07:10.44059611Z",
+        "Path": "docker-php-entrypoint",
+        "Args": [
+            "apache2-foreground"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 10882,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2025-09-16T23:07:10.799588559Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:0477daa1617ff673e0e76bd1614cc3c7dbdb2568ea7f3a7b3ff1883ddca062ae",
+        "ResolvConfPath": "/var/lib/docker/containers/e93a561237b2ab3e10b1d417462b1bb1fa1066b5e2995141c5ff3b14d146d130/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/e93a561237b2ab3e10b1d417462b1bb1fa1066b5e2995141c5ff3b14d146d130/hostname",
+        "HostsPath": "/var/lib/docker/containers/e93a561237b2ab3e10b1d417462b1bb1fa1066b5e2995141c5ff3b14d146d130/hosts",
+        "LogPath": "/var/lib/docker/containers/e93a561237b2ab3e10b1d417462b1bb1fa1066b5e2995141c5ff3b14d146d130/e93a561237b2ab3e10b1d417462b1bb1fa1066b5e2995141c5ff3b14d146d130-json.log",
+        "Name": "/phpmessages_container2",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {
+                "80/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "80"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": true,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                26,
+                182
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/a915e505b9813527df82e8107b34a0a7667b195c9d01373eb9c33a74905d1a48-init/diff:/var/lib/docker/overlay2/2682eec24da5115d2104126a9853385e68a2b727a8b720150ba4ef63426ad0ce/diff:/var/lib/docker/overlay2/35964ac19844ea07737ffa364f703a8631ae81806071f321b7f1ecc830cbc516/diff:/var/lib/docker/overlay2/d5b68a961bf3c54bb3ebbb45d8f9802a10f6e5b93de309fd33d7d1033923a349/diff:/var/lib/docker/overlay2/084fe012befbe8cc6a252d666e5d8882c46d9b2860dc1fa05eafdf76265c7535/diff:/var/lib/docker/overlay2/c785768e5ea28513107c1bb4572edafee973eed9d1449b0fa8b16da265a53f76/diff:/var/lib/docker/overlay2/3cb1a8b71374881085fcbf3aedc95d9dffe99e68df9f83075a1687d72450c2b4/diff:/var/lib/docker/overlay2/973e36b99b0c2b3461273b0bc46cd471c886ceb36366dad54ca1c5b318a18e80/diff:/var/lib/docker/overlay2/7654c7fe90baebe24ac06e4addc601d82d8ce78a48ebac38ebb7580e151adce0/diff:/var/lib/docker/overlay2/fd8ecce6899e24f398cc000be13fb331da56cec07ea71e09e4954103ff07f851/diff:/var/lib/docker/overlay2/ec5b13b1d7fe96798f752e525ccf16fd5887a029e618aa2eb7d644e3ba35bc6d/diff:/var/lib/docker/overlay2/8839a293977c1c1914fa946dc05c5cf18bf704f60fe5d3ed8d4d33a4f01a2b96/diff:/var/lib/docker/overlay2/764120bed078942abec91be573e56213328808a25a22fbae20ea0a1518f006f3/diff:/var/lib/docker/overlay2/fca921d7721bc8dbf862d6dcff0953929ad672886a4a74d61349ba5b15519407/diff:/var/lib/docker/overlay2/1e672de197852de44ab209103bdf628724d3eae622c7f486b3a01a708853b818/diff:/var/lib/docker/overlay2/d0546982e613f394e5412cc23ab078e605e254cbf11aa4e4115fcd6afde51cd0/diff:/var/lib/docker/overlay2/5f54170574c84db4c7063b3114d40bf6b83ffd785e979cfef94da0a6daf0e6e4/diff:/var/lib/docker/overlay2/2deede9601614b926aa0f616cd7c780bafd447dfcba7d42f25ae76158dbb5349/diff",
+                "MergedDir": "/var/lib/docker/overlay2/a915e505b9813527df82e8107b34a0a7667b195c9d01373eb9c33a74905d1a48/merged",
+                "UpperDir": "/var/lib/docker/overlay2/a915e505b9813527df82e8107b34a0a7667b195c9d01373eb9c33a74905d1a48/diff",
+                "WorkDir": "/var/lib/docker/overlay2/a915e505b9813527df82e8107b34a0a7667b195c9d01373eb9c33a74905d1a48/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "f2745b7456ea3f33e68efcee658d87869d6058826d4ceea0d663f84176cdab5e",
+                "Source": "/var/lib/docker/volumes/f2745b7456ea3f33e68efcee658d87869d6058826d4ceea0d663f84176cdab5e/_data",
+                "Destination": "/data",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "e93a561237b2",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "PHPIZE_DEPS=autoconf \t\tdpkg-dev \t\tfile \t\tg++ \t\tgcc \t\tlibc-dev \t\tmake \t\tpkg-config \t\tre2c",
+                "PHP_INI_DIR=/usr/local/etc/php",
+                "APACHE_CONFDIR=/etc/apache2",
+                "APACHE_ENVVARS=/etc/apache2/envvars",
+                "PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64",
+                "PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64",
+                "PHP_LDFLAGS=-Wl,-O1 -pie",
+                "GPG_KEYS=AFD8691FDAEDF03BDF6E460563F15A9B715376CA 9D7F99A0CB8F05C8A6958D6256A97AF7600A39A6 0616E93D95AF471243E26761770426E17EBBB3DD",
+                "PHP_VERSION=8.4.12",
+                "PHP_URL=https://www.php.net/distributions/php-8.4.12.tar.xz",
+                "PHP_ASC_URL=https://www.php.net/distributions/php-8.4.12.tar.xz.asc",
+                "PHP_SHA256=c1b7978cbb5054eed6c749bde4444afc16a3f2268101fb70a7d5d9b1083b12ad"
+            ],
+            "Cmd": [
+                "apache2-foreground"
+            ],
+            "Image": "phpmessages",
+            "Volumes": {
+                "/data": {}
+            },
+            "WorkingDir": "/var/www/html",
+            "Entrypoint": [
+                "docker-php-entrypoint"
+            ],
+            "OnBuild": null,
+            "Labels": {},
+            "StopSignal": "SIGWINCH"
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "fac6a98dd1e3ce93ebfada4039afa9878c690ccd3fb658aed9248a44cd8e9a60",
+            "SandboxKey": "/var/run/docker/netns/fac6a98dd1e3",
+            "Ports": {
+                "80/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "80"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "80"
+                    }
+                ]
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "4c96306f95e5be7429c951caf2b95b986877cf2f6c62127770b9e473deb70605",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:02",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "02:42:ac:11:00:02",
+                    "DriverOpts": null,
+                    "NetworkID": "cb6e256b89f38a9c15b8c6af27a63d4c9b30969e7d7065da74d0649ad0694ea4",
+                    "EndpointID": "4c96306f95e5be7429c951caf2b95b986877cf2f6c62127770b9e473deb70605",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ 
