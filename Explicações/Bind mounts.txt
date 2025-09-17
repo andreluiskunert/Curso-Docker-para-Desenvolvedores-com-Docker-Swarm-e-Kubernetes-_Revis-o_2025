@@ -1,0 +1,19 @@
+Bind mounts
+●
+Bind mount também é um volume, porém ele fica em um diretório que
+nós especificamos;
+●Então não criamos um volume em sim, apontamos um diretório;
+●O comando para criar um bind mount é: docker run /dir/data:/data
+●Desta maneira o diretório /dir/data no nosso computador, será o volume
+deste container;
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-codesdesenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-
+Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker run -d -p 80:80 \
+  --name phpmessages_container9 \
+  -v "/home/desenvolvedor/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes/messages:/var/www/html/messages" \
+  --rm phpmessages
+475245f07213a4cafded1aa5f1f55247967e83b8c26e26b3c1afedbc5107eae1
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker ps
+CONTAINER ID   IMAGE         COMMAND                  CREATED              STATUS              PORTS                               NAMES
+475245f07213   phpmessages   "docker-php-entrypoi…"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp, :::80->80/tcp   phpmessages_container9
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ 

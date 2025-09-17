@@ -13,4 +13,5 @@
     <input type="submit" value="Enviar Mensagem">
   </form>
 </body>
+<p>Obrigado pela preferencia</p>
 </html>
