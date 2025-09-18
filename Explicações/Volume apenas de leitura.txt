@@ -1,0 +1,29 @@
+Volume apenas de leitura
+●
+Podemos criar um volume que tem apenas permissão de leitura, isso é
+útil em algumas aplicações;
+●
+Para realizar esta configuração devemos utilizar o comando: docker run
+-v volume:/data:ro
+●
+Este :ro é a abreviação de read only;
+ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$  docker run -d -p 80:80 \
+  --name phpmessages_container9 \
+  -v volumeleitura:/var/www/html:ro --rm phpmessages
+docker: Error response from daemon: Conflict. The container name "/phpmessages_container9" is already in use by container "dcab3f434c8db244d20e499e65163c3bfc60725ef6d0273b5a78c7c008aaa12a". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker run -d -p 80:80 \
+  --name phpmessages_container10 \
+  -v volumeleitura:/var/www/html:ro --rm phpmessages
+15862ded8d78ef6fc2287480f00acdea280d187d02e7c3398079272a1e2822ec
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker ps
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS          PORTS                               NAMES
+15862ded8d78   phpmessages   "docker-php-entrypoi…"   29 seconds ago   Up 28 seconds   0.0.0.0:80->80/tcp, :::80->80/tcp   phpmessages_container10
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker stop 1586
+1586
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ 
+
+

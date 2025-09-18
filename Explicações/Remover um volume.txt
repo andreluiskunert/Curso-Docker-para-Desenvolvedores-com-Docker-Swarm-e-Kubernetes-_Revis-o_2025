@@ -1,0 +1,55 @@
+Remover um volume
+●Podemos também remover um volume existente de forma fácil;
+●Vamos utilizar o comando docker volume rm <nome>
+●Observe que os dados serão removidos todos também, tome cuidado
+com este comando;
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ 
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker volume ls
+DRIVER    VOLUME NAME
+local     0d38622cf589b0db50f4eb17d835e1d348d7ccae5921a5171df77413ff90fac6
+local     phpvolume
+local     volumeteste
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker volume ls
+DRIVER    VOLUME NAME
+local     0d38622cf589b0db50f4eb17d835e1d348d7ccae5921a5171df77413ff90fac6
+local     phpvolume
+local     volumeteste
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker volume rm volumeteste
+volumeteste
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ 
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker volune ls
+docker: 'volune' is not a docker command.
+See 'docker --help'
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker volume ls
+DRIVER    VOLUME NAME
+local     0d38622cf589b0db50f4eb17d835e1d348d7ccae5921a5171df77413ff90fac6
+local     phpvolume
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker volume rm phpvolume
+phpvolume
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker volume rm  0d38622cf589b0db50f4eb17d835e1d348d7ccae5921a5171df77413ff90fac6
+Error response from daemon: remove 0d38622cf589b0db50f4eb17d835e1d348d7ccae5921a5171df77413ff90fac6: volume is in use - [dcab3f434c8db244d20e499e65163c3bfc60725ef6d0273b5a78c7c008aaa12a]
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker rm phpmessages_container
+phpmessages_container
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker volume rm  0d38622cf589b0db50f4eb17d835e1d348d7ccae5921a5171df77413ff90fac6
+Error response from daemon: remove 0d38622cf589b0db50f4eb17d835e1d348d7ccae5921a5171df77413ff90fac6: volume is in use - [dcab3f434c8db244d20e499e65163c3bfc60725ef6d0273b5a78c7c008aaa12a]
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker volume rm  0d38622cf589b0db50f4eb17d835e1d348d7ccae5921a5171df77413ff90fac6
+Error response from daemon: remove 0d38622cf589b0db50f4eb17d835e1d348d7ccae5921a5171df77413ff90fac6: volume is in use - [dcab3f434c8db244d20e499e65163c3bfc60725ef6d0273b5a78c7c008aaa12a]
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ docker ps -a
+CONTAINER ID   IMAGE                           COMMAND                  CREATED          STATUS                      PORTS     NAMES
+dcab3f434c8d   phpmessages                     "docker-php-entrypoi…"   15 minutes ago   Exited (0) 13 minutes ago             phpmessages_container9
+4827a1d81609   phpmessages                     "docker-php-entrypoi…"   3 days ago       Exited (0) 3 days ago                 phpmessages2_container
+24bf94c0eec3   phpmessages                     "docker-php-entrypoi…"   3 days ago       Created                               phpmessages1_container
+662b26311670   alktecno/nodeteste:novaversao   "docker-entrypoint.s…"   4 days ago       Exited (1) 4 days ago                 testando_imagem
+46c386f0c944   meunode_diferente               "docker-entrypoint.s…"   4 days ago       Exited (1) 4 days ago                 node_diferente9
+05c4f649b736   python                          "python3"                5 days ago       Exited (0) 5 days ago                 serene_napier
+59c82e298f17   python                          "python3"                5 days ago       Exited (0) 5 days ago                 thirsty_golick
+a4ae9009472f   meunode_diferente               "docker-entrypoint.s…"   5 days ago       Exited (1) 5 days ago                 node_diferente8
+53c69fb95126   meunode_diferente               "docker-entrypoint.s…"   5 days ago       Created                               node_diferente7
+54c06215ace5   meunode_diferente               "docker-entrypoint.s…"   5 days ago       Created                               node_diferente6
+c911accac4a8   meunode_diferente               "docker-entrypoint.s…"   5 days ago       Exited (1) 5 days ago                 mode_diferente6
+dbbda36451e3   dcb23412044b                    "docker-entrypoint.s…"   5 days ago       Exited (1) 5 days ago                 mode_diferente5
+6524e77ccfee   dcb23412044b                    "docker-entrypoint.s…"   5 days ago       Exited (1) 5 days ago                 mode_diferente3
+5aaa7290fae2   dcb23412044b                    "docker-entrypoint.s…"   6 days ago       Exited (1) 6 days ago                 mode_diferente2
+c669f94b9d97   dcb23412044b                    "docker-entrypoint.s…"   6 days ago       Exited (1) 6 days ago                 mode_diferente
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/2_volumes$ 
