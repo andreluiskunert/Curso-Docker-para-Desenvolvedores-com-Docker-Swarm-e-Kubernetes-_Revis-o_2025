@@ -1,0 +1,69 @@
+Removendo redes em massa
+●
+Podemos remover redes de forma simples também: docker network
+prune;
+●Assim todas as redes não utilizadas no momento serão removidas;
+●Receberemos uma mensagem de confirmação do Docker antes da ação
+ser executada;
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+aee5110c88ea   bridge    bridge    local
+d1027bd71687   host      host      local
+f0047da3ad2d   none      null      local
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network create t1
+80fbe2088e2eb77c9dff4ffd221f0a0aa5f61cc96c5678463235f03b9cae5633
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network create t2
+86f6a959af9d12c53bf01954eb4ff889343f18663376deab2470f6c859422d1e
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network create t3
+29e91d4d6f1038b03547ba409063c1e08b93ef262ac896d8a4d8d5fc5fc38971
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network create t4
+b98a74d92e445e6bd24d531550b2410bbb0e8ddffb0fd33eda6ad29af8d3a0a7
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network create t5
+6169e1bb054e5b5c9ffe40dfa5febf5e14092b64e2b117d445d58d03f1c3008d
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network create t6
+aacea3cdd1d185c0f888689662104188249a990fce4669308411d3582a42eeb7
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network create t7
+cc93526afa613c78b2eaabe0d993bdc62c99cc54d2a07d42f094790cfc53ba6a
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network create t8
+b76a6825521366f49cdec9c2ea8049b8b1290979d13dde33a4ecb0185735c3dd
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network create t9
+6703ef1bf4177ba5fde6e3aa286ceda2965684a4a1704b94b533816e34582eba
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network create t10
+1908b51e73800b6bc50ca7b7107b4029982f0b87e76aa8e39904823492bab961
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+aee5110c88ea   bridge    bridge    local
+d1027bd71687   host      host      local
+f0047da3ad2d   none      null      local
+80fbe2088e2e   t1        bridge    local
+86f6a959af9d   t2        bridge    local
+29e91d4d6f10   t3        bridge    local
+b98a74d92e44   t4        bridge    local
+6169e1bb054e   t5        bridge    local
+aacea3cdd1d1   t6        bridge    local
+cc93526afa61   t7        bridge    local
+b76a68255213   t8        bridge    local
+6703ef1bf417   t9        bridge    local
+1908b51e7380   t10       bridge    local
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network prune
+WARNING! This will remove all custom networks not used by at least one container.
+Are you sure you want to continue? [y/N] y
+Deleted Networks:
+t5
+t7
+t9
+t10
+t3
+t4
+t2
+t6
+t8
+t1
+
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+aee5110c88ea   bridge    bridge    local
+d1027bd71687   host      host      local
+f0047da3ad2d   none      null      local
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ 

@@ -1,0 +1,7 @@
+Instalação do Postman
+●Vamos criar uma API para testar a conexão entre containers;
+●Para isso vamos utilizar o software Postman, que é o mais utilizado do
+mercado para desenvolvimento de APIs;
+●
+Link: https://www.postman.com/
+obs.: Ja tenho instalato...

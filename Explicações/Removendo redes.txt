@@ -4,3 +4,38 @@ Podemos remover redes de forma simples também: docker network rm
 <nome>;
 ●Assim a rede não estará mais disponível para utilizarmos;
 ●Devemos tomar cuidado com containers já conectados;
+ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-p
+ara-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-par
+a-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network ls
+NETWORK ID     NAME             DRIVER    SCOPE
+aee5110c88ea   bridge           bridge    local
+d1027bd71687   host             host      local
+56adf29b5971   minharedeteste   bridge    local
+f0047da3ad2d   none             null      local
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network create meumacvlan
+3a4604368a92d8a2aec63cd9cfd433e228400f9b5a8f47acc185478a8abbab08
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network ls
+NETWORK ID     NAME             DRIVER    SCOPE
+aee5110c88ea   bridge           bridge    local
+d1027bd71687   host             host      local
+3a4604368a92   meumacvlan       bridge    local
+56adf29b5971   minharedeteste   bridge    local
+f0047da3ad2d   none             null      local
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network rm meumacvlan
+meumacvlan
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network ls
+NETWORK ID     NAME             DRIVER    SCOPE
+aee5110c88ea   bridge           bridge    local
+d1027bd71687   host             host      local
+56adf29b5971   minharedeteste   bridge    local
+f0047da3ad2d   none             null      local
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network rm minharedeteste
+minharedeteste
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+aee5110c88ea   bridge    bridge    local
+d1027bd71687   host      host      local
+f0047da3ad2d   none      null      local
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks$ 
+
