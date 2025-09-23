@@ -1,14 +1,14 @@
-import flask
-from flask import request, json, jsonify
-import requests
+FROM python:3
 
-app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+RUN apt-get update -y && \
+    apt-get install -y python3-pip python3-dev
 
-@app.route("/", methods=["GET"])
-def index():
-  data = requests.get('https://randomuser.me/api')
-  return data.json()
+WORKDIR /app
 
-if __name__ == "__main__":
-  app.run(host="0.0.0.0", debug=True, port="5000")
+COPY . .
+
+RUN pip install Flask requests flask_mysqldb
+
+EXPOSE 5000
+
+CMD ["python", "app.py"]
