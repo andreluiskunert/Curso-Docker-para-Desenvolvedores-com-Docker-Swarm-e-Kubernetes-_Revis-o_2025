@@ -6,7 +6,7 @@ from flask_mysqldb import MySQL
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
-app.config['MYSQL_HOST'] = 'host.docker.internal'  # ou 'mysql' se usar rede docker
+app.config['MYSQL_HOST'] = 'mysq-_qpi_container'  # ou 'mysql' se usar rede docker
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''  # ajuste conforme seu MySQL
 app.config['MYSQL_DB'] = 'flaskhost'
