@@ -6,3 +6,62 @@ precisam se conectar para inserir um dado no banco, por exemplo;
 ●Agora nosso container de flask vai inserir dados em um MySQL que roda
 pelo Docker também;
 EX.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks/3.conn_containers/mysql$ docker build -t mysqliapinetwork .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  3.072kB
+Step 1/4 : FROM mysql:5.7
+ ---> 5107333e08a8
+Step 2/4 : COPY schema.sql /docker-entrypoint-inidb.d/
+ ---> Using cache
+ ---> dbdd899441cb
+Step 3/4 : EXPOSE 3306
+ ---> Using cache
+ ---> 50218d7f0e6b
+Step 4/4 : VOLUME ["/backup/"]
+ ---> Using cache
+ ---> 36a98ed4a64e
+Successfully built 36a98ed4a64e
+Successfully tagged mysqliapinetwork:latest
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks/3.conn_containers/mysql$ 
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks/3.conn_containers/mysql$ docker network create flasknetwork
+Error response from daemon: network with name flasknetwork already exists
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks/3.conn_containers/mysql$ docker network ls
+NETWORK ID     NAME           DRIVER    SCOPE
+9a1a0a25a909   bridge         bridge    local
+96e545605aa5   flasknetwork   bridge    local
+d1027bd71687   host           host      local
+f0047da3ad2d   none           null      local
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks/3.conn_containers/mysql$ docker run -a -p 3306:3306 --name mysql_api_container01 --rm --network flasknetwork -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysqlapinetwork
+invalid argument "-p" for "-a, --attach" flag: valid streams are STDIN, STDOUT and STDERR
+See 'docker run --help'.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks/3.conn_containers/mysql$ docker run -d -p 3306:3306 --name mysql_api_container01 --rm --network flasknetwork -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysqlapinetwork
+6fe2d93f216563ee24d51c2ee1ed826125131e3b70f312b21e5aac538ed20a29
+docker: Error response from daemon: driver failed programming external connectivity on endpoint mysql_api_container01 (676c85df75a4984f9d62314fe88d0256fd8e319ba9c6b15f296bcf4bef6464d6): failed to bind port 0.0.0.0:3306/tcp: Error starting userland proxy: listen tcp4 0.0.0.0:3306: bind: address already in use.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks/3.conn_containers/mysql$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks/3.conn_containers/mysql$ docker run -d -p 3306:3306 --name mysql_api_container --rm --network flasknetwork -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysqlapinet
+work
+fd0ce5f3d049617da6819a6ddc1260ae8a26185c2027d6deb16443441e0cb1a6
+docker: Error response from daemon: driver failed programming external connectivity on endpoint mysql_api_container (a3b66dff4a01cb13c1674a99e44158baac939945b59007208c75e8dc936ab9ae): failed to bind port 0.0.0.0:3306/tcp: Error starting userland proxy: listen tcp4 0.0.0.0:3306: bind: address already in use.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks/3.conn_containers/mysql$ docker run -d -p 3306:3306 --name mysql_api_container2 --rm --network flasknetwork -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysqlapine
+twork
+aae537437fc4a1673ca7698c5cdc55ce1e958e9106e944184ed8c8203a4f2d7e
+docker: Error response from daemon: driver failed programming external connectivity on endpoint mysql_api_container2 (4244802d3d28aab7db0603c1229b2abba4325e5377cd3b8ad9e9407aeda35623): failed to bind port 0.0.0.0:3306/tcp: Error starting userland proxy: listen tcp4 0.0.0.0:3306: bind: address already in use.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks/3.conn_containers/mysql$ sudo systemctl stop mysql
+[sudo] senha para desenvolvedor:        
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks/3.conn_containers/mysql$ docker run -d -p 3307:3306 --name mysql_api_container --rm --network flasknetwork -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysqlapinetwork
+b4d72c81d0bfad93a0a9de83a8c46b5e81dd49bdf7f4f65c0133b60102a1639f
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks/3.conn_containers/mysql$ docker run -d -p 5000:5000 --name mysql_api_container --rm --network flasknetwork -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysqlapinet
+work
+docker: Error response from daemon: Conflict. The container name "/mysql_api_container" is already in use by container "b4d72c81d0bfad93a0a9de83a8c46b5e81dd49bdf7f4f65c0133b60102a1639f". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks/3.conn_containers/mysql$ docker run -d -p 5000:5000 --name mysql_api_container3 --rm --network flasknetwork -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysqlapine
+twork
+f173b30e31cd31e35df25738fa200546422570ada10279f94fe16d83c046ad15
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/3_networks/3.conn_containers/mysql$ docker ps 
+CONTAINER ID   IMAGE             COMMAND                  CREATED              STATUS              PORTS                                                            NAMES
+f173b30e31cd   mysqlapinetwork   "docker-entrypoint.s…"   9 seconds ago        Up 8 seconds        3306/tcp, 33060/tcp, 0.0.0.0:5000->5000/tcp, :::5000->5000/tcp   mysql_api_container3
+b4d72c81d0bf   mysqlapinetwork   "docker-entrypoint.s…"   About a minute ago   Up About a minute   33060/tcp, 0.0.0.0:3307->3306/tcp, [::]:3307->3306/tcp           mysql_api_container
