@@ -1,14 +1,17 @@
-import flask
-from flask import request, json, jsonify
-import requests
+# Imagem base do Python
+FROM python:3.11-slim
 
-app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+# Definir diretório de trabalho
+WORKDIR /app
 
-@app.route("/", methods=["GET"])
-def index():
-  data = requests.get('https://randomuser.me/api')
-  return data.json()
+# Copiar os arquivos da aplicação para dentro do container
+COPY . .
 
-if __name__ == "__main__":
-  app.run(host="0.0.0.0", debug=True, port="5000")
+# Instalar dependências
+RUN pip install --no-cache-dir flask
+
+# Expor a porta usada pelo Flask
+EXPOSE 5000
+
+# Comando para rodar a aplicação
+CMD ["python", "app.py"]

@@ -1,4 +1,4 @@
-Conexão entre containers
+Conexão entre containers _ Revisar de novo
 ●Podemos também estabelecer uma conexão entre containers;
 ●Duas imagens distintas rodando em containers separados que
 precisam se conectar para inserir um dado no banco, por exemplo;
