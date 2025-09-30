@@ -1,0 +1,17 @@
+Vamos criar nosso arquivo YAML
+●O arquivo .yaml geralmente possui chaves e valores;
+●Que é de onde vamos retirar as configurações do nosso sistema;
+●Para definir uma chave apenas inserimos o nome dela, em seguida
+colocamos dois pontos e depois o valor;
+●
+Vamos criar nosso primeiro arquivo YAML!
+----->>------
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/4_yaml$ pip3 install --user --upgrade pyyaml
+Requirement already satisfied: pyyaml in /usr/lib/python3/dist-packages (5.4.1)
+Collecting pyyaml
+  Downloading pyyaml-6.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (770 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 770.3/770.3 KB 3.3 MB/s eta 0:00:00
+Installing collected packages: pyyaml
+Successfully installed pyyaml-6.0.3
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/4_yaml$ python app.py

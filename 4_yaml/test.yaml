@@ -1,0 +1,7 @@
+nome: "Andre Luis"
+idade: 43
+# Este Obejeto descreve o nosso projeto
+objeto: 
+  versao: 2
+  arquivo: "teste.txt"
+  # pra executar use "python3 app.py"
