@@ -1,0 +1,10 @@
+Booleanos
+●Podemos inserir booleanos em YAML da seguinte forma:
+●True e On = verdadeiro;
+●False e Off = falso;
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/4_yaml$ python3 app.py
+nome : Andre Luis
+idade : 43
+objeto : {'versao': 2, 'arquivo': 'teste.txt', 'objeto1': None, 'versao_completa': 3.14, 'string_sem-aspas': 'Informe qual curso Tecnologico está cursando', 'texto': 'Desenvolvimento Full Stack_EaD_Estácio', 'nulo': None, 'nulo_dois': None, 'verdadeiro': True, 'verdadeiro_dois': True, 'falso': False, 'falso_dois': False}
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/4_yaml$ 

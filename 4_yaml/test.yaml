@@ -5,3 +5,31 @@ objeto:
   versao: 2
   arquivo: "teste.txt"
   # pra executar use "python3 app.py"
+  objeto1:
+  versao: 2
+  versao_completa: 3.14
+  # String sem aspas
+  string_sem-aspas: Informe qual curso Tecnologico está cursando
+  texto: "Desenvolvimento Full Stack_EaD_Estácio"
+   # Dados nulos:
+  nulo: ~
+  nulo_dois: null
+  # Booleanos:
+  verdadeiro: True
+  verdadeiro_dois: on
+  falso: false
+  falso_dois: off
+  # Arrays:
+  lista: [1, 2, 3, 4, 5]
+  lista_dois:
+   - "teste"
+   - 10
+   - "outro teste"
+   - True
+# Dicionários:
+obj: {a: 3,b: 5, c: 7, objeto_interno: { f: 15}}
+objeto:
+ d: 11
+ e: 13
+ objeto_interno:
+  x:2

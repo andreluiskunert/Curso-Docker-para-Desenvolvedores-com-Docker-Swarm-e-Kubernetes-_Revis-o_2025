@@ -1,0 +1,12 @@
+Dados numéricos
+●Em YAML podemos escrever dados numéricos com:
+●Inteiros = 12;
+●Floats = 15.8;
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-p
+ara-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-par
+a-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/4_yaml$ python3 app.py
+nome : Andre Luis
+idade : 43
+objeto : {'versao': 2, 'arquivo': 'teste.txt', 'objeto1': None, 'versao_completa': 3.14}
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/4_yaml$ 

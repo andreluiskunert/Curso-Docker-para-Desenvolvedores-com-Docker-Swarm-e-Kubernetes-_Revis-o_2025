@@ -1,0 +1,17 @@
+Dicionários
+●
+Os dicionários, tipo de dados para objetos ou listas com chaves e valores,
+podem ser escritos assim:
+●obj: {a: 1, b: 2, c: 3}
+●E também com o nesting:
+objeto:
+chave: 1
+chave: 2
+EX.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/4_yaml$ 
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/4_yaml$ python3 app.py
+nome : Andre Luis
+idade : 43
+objeto : {'d': 11, 'e': 13, 'objeto_interno': 'x:2'}
+obj : {'a': 3, 'b': 5, 'c': 7, 'objeto_interno': {'f': 15}}
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/4_yaml$ 
