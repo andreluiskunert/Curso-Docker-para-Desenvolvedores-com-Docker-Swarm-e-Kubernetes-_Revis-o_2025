@@ -1,0 +1,181 @@
+Instalando docker compose no Linux
+●
+Usuários do Linux ainda não possuem a ferramenta que utilizaremos
+nesta seção;
+●Vamos seguir as instruções de: https://docs.docker.com/compose/install/
+●O docker compose é essencial para atingirmos os nossos objetos no
+curso;
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/5_compose$ docker --version
+Docker version 27.5.1, build 27.5.1-0ubuntu3~22.04.2
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/5_compose$ sudo apt update
+sudo apt install docker.io -y
+sudo systemctl enable docker
+sudo systemctl start docker
+[sudo] senha para desenvolvedor:        
+Ign:1 http://packages.linuxmint.com virginia InRelease
+Atingido:2 http://packages.linuxmint.com virginia Release                                                                                                                    
+Atingido:4 https://packages.microsoft.com/repos/code stable InRelease                                                                                                        
+Atingido:6 http://archive.ubuntu.com/ubuntu jammy InRelease                                                                                                                  
+Ign:7 https://download.docker.com/linux/ubuntu virginia InRelease                                                                                                            
+Atingido:8 http://security.ubuntu.com/ubuntu jammy-security InRelease                                                                                                        
+Atingido:9 https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 InRelease                                                                                               
+Atingido:10 http://archive.ubuntu.com/ubuntu jammy-updates InRelease                                                                                                         
+Atingido:3 https://repository.spotify.com stable InRelease                                                                                          
+Err:11 https://download.docker.com/linux/ubuntu virginia Release                                                      
+  404  Not Found [IP: 13.227.107.52 443]
+Atingido:12 http://archive.ubuntu.com/ubuntu jammy-backports InRelease                   
+Atingido:13 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+Lendo listas de pacotes... Pronto
+E: The repository 'https://download.docker.com/linux/ubuntu virginia Release' does not have a Release file.
+N: Atualizações a partir de tal repositório não podem ser feitas de forma segura e estão, portanto, desativadas por definição.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+N: Skipping acquire of configured file 'multiverse/binary-i386/Packages' as repository 'https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 InRelease' doesn't support architecture 'i386'
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+docker.io já é a versão mais recente (27.5.1-0ubuntu3~22.04.2).
+Os seguintes pacotes foram instalados automaticamente e já não são necessários:
+  gconf-service gconf-service-backend gconf2-common gyp libgconf-2-4 libjs-events libjs-inherits libjs-is-typedarray libjs-psl libjs-source-map libjs-sprintf-js
+  libjs-typedarray-to-buffer libnode-dev libuv1-dev linux-headers-5.15.0-143 linux-headers-5.15.0-143-generic linux-headers-5.15.0-144 linux-headers-5.15.0-144-generic
+  linux-headers-5.15.0-151 linux-headers-5.15.0-151-generic linux-headers-5.15.0-152 linux-headers-5.15.0-152-generic linux-headers-5.15.0-153
+  linux-headers-5.15.0-153-generic linux-image-5.15.0-143-generic linux-image-5.15.0-144-generic linux-image-5.15.0-151-generic linux-image-5.15.0-152-generic
+  linux-image-5.15.0-153-generic linux-modules-5.15.0-143-generic linux-modules-5.15.0-144-generic linux-modules-5.15.0-151-generic linux-modules-5.15.0-152-generic
+  linux-modules-5.15.0-153-generic linux-modules-extra-5.15.0-143-generic linux-modules-extra-5.15.0-144-generic linux-modules-extra-5.15.0-151-generic
+  linux-modules-extra-5.15.0-152-generic linux-modules-extra-5.15.0-153-generic node-abbrev node-ansi-regex node-ansi-styles node-ansistyles node-are-we-there-yet
+  node-arrify node-asap node-asynckit node-balanced-match node-brace-expansion node-chownr node-clean-yaml-object node-color-convert node-color-name node-commander
+  node-core-util-is node-decompress-response node-delayed-stream node-delegates node-depd node-diff node-encoding node-end-of-stream node-err-code node-escape-string-regexp
+  node-fancy-log node-foreground-child node-fs.realpath node-function-bind node-get-stream node-glob node-growl node-has-flag node-has-unicode node-hosted-git-info
+  node-iconv-lite node-iferr node-imurmurhash node-indent-string node-inflight node-inherits node-ini node-ip node-ip-regex node-is-buffer node-is-plain-obj
+  node-is-typedarray node-isarray node-isexe node-json-parse-better-errors node-jsonparse node-kind-of node-lodash-packages node-lowercase-keys node-lru-cache
+  node-mimic-response node-minimatch node-minimist node-minipass node-mute-stream node-negotiator node-npm-bundled node-once node-osenv node-p-cancelable node-p-map
+  node-path-is-absolute node-process-nextick-args node-promise-inflight node-promise-retry node-promzard node-pump node-quick-lru node-read node-readable-stream
+  node-resolve node-retry node-safe-buffer node-set-blocking node-signal-exit node-slash node-slice-ansi node-source-map node-spdx-correct node-spdx-exceptions
+  node-spdx-expression-parse node-spdx-license-ids node-sprintf-js node-stealthy-require node-string-decoder node-supports-color node-text-table node-time-stamp node-tmatch
+  node-typedarray-to-buffer node-universalify node-util-deprecate node-validate-npm-package-license node-webidl-conversions node-whatwg-fetch node-wrappy node-yallist
+  php8.1-bcmath php8.1-mysql
+Utilize 'sudo apt autoremove' para os remover.
+0 pacotes atualizados, 0 pacotes novos instalados, 0 a serem removidos e 0 não atualizados.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/5_compose$ sudo usermod -aG docker $USER
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/5_compose$ DOCKER_COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep tag_name | cut -d '"' -f 4)
+
+sudo curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 72.8M  100 72.8M    0     0  3902k      0  0:00:19  0:00:19 --:--:-- 4636k
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/5_compose$ sudo chmod +x /usr/local/bin/docker-compose
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/5_compose$ docker-compose --version
+Docker Compose version v2.39.4
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/5_compose$ sudo apt update
+sudo apt install docker-compose -y
+Ign:1 http://packages.linuxmint.com virginia InRelease
+Atingido:3 https://packages.microsoft.com/repos/code stable InRelease                                                                                                        
+Atingido:4 http://packages.linuxmint.com virginia Release                                                                                                                    
+Atingido:5 http://security.ubuntu.com/ubuntu jammy-security InRelease                                                                                                        
+Ign:6 https://download.docker.com/linux/ubuntu virginia InRelease                                                                                                            
+Atingido:7 https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 InRelease                                                                                               
+Atingido:8 http://archive.ubuntu.com/ubuntu jammy InRelease                                                                                                                 
+Atingido:2 https://repository.spotify.com stable InRelease                                                                                                                  
+Err:9 https://download.docker.com/linux/ubuntu virginia Release                                                                         
+  404  Not Found [IP: 13.227.107.22 443]
+Atingido:10 http://archive.ubuntu.com/ubuntu jammy-updates InRelease                                             
+Atingido:12 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+Atingido:13 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+Lendo listas de pacotes... Pronto
+E: The repository 'https://download.docker.com/linux/ubuntu virginia Release' does not have a Release file.
+N: Atualizações a partir de tal repositório não podem ser feitas de forma segura e estão, portanto, desativadas por definição.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+N: Skipping acquire of configured file 'multiverse/binary-i386/Packages' as repository 'https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 InRelease' doesn't support architecture 'i386'
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+Os seguintes pacotes foram instalados automaticamente e já não são necessários:
+  gconf-service gconf-service-backend gconf2-common gyp libgconf-2-4 libjs-events libjs-inherits libjs-is-typedarray libjs-psl libjs-source-map libjs-sprintf-js
+  libjs-typedarray-to-buffer libnode-dev libuv1-dev linux-headers-5.15.0-143 linux-headers-5.15.0-143-generic linux-headers-5.15.0-144 linux-headers-5.15.0-144-generic
+  linux-headers-5.15.0-151 linux-headers-5.15.0-151-generic linux-headers-5.15.0-152 linux-headers-5.15.0-152-generic linux-headers-5.15.0-153
+  linux-headers-5.15.0-153-generic linux-image-5.15.0-143-generic linux-image-5.15.0-144-generic linux-image-5.15.0-151-generic linux-image-5.15.0-152-generic
+  linux-image-5.15.0-153-generic linux-modules-5.15.0-143-generic linux-modules-5.15.0-144-generic linux-modules-5.15.0-151-generic linux-modules-5.15.0-152-generic
+  linux-modules-5.15.0-153-generic linux-modules-extra-5.15.0-143-generic linux-modules-extra-5.15.0-144-generic linux-modules-extra-5.15.0-151-generic
+  linux-modules-extra-5.15.0-152-generic linux-modules-extra-5.15.0-153-generic node-abbrev node-ansi-regex node-ansi-styles node-ansistyles node-are-we-there-yet
+  node-arrify node-asap node-asynckit node-balanced-match node-brace-expansion node-chownr node-clean-yaml-object node-color-convert node-color-name node-commander
+  node-core-util-is node-decompress-response node-delayed-stream node-delegates node-depd node-diff node-encoding node-end-of-stream node-err-code node-escape-string-regexp
+  node-fancy-log node-foreground-child node-fs.realpath node-function-bind node-get-stream node-glob node-growl node-has-flag node-has-unicode node-hosted-git-info
+  node-iconv-lite node-iferr node-imurmurhash node-indent-string node-inflight node-inherits node-ini node-ip node-ip-regex node-is-buffer node-is-plain-obj
+  node-is-typedarray node-isarray node-isexe node-json-parse-better-errors node-jsonparse node-kind-of node-lodash-packages node-lowercase-keys node-lru-cache
+  node-mimic-response node-minimatch node-minimist node-minipass node-mute-stream node-negotiator node-npm-bundled node-once node-osenv node-p-cancelable node-p-map
+  node-path-is-absolute node-process-nextick-args node-promise-inflight node-promise-retry node-promzard node-pump node-quick-lru node-read node-readable-stream
+  node-resolve node-retry node-safe-buffer node-set-blocking node-signal-exit node-slash node-slice-ansi node-source-map node-spdx-correct node-spdx-exceptions
+  node-spdx-expression-parse node-spdx-license-ids node-sprintf-js node-stealthy-require node-string-decoder node-supports-color node-text-table node-time-stamp node-tmatch
+  node-typedarray-to-buffer node-universalify node-util-deprecate node-validate-npm-package-license node-webidl-conversions node-whatwg-fetch node-wrappy node-yallist
+  php8.1-bcmath php8.1-mysql
+Utilize 'sudo apt autoremove' para os remover.
+Os pacotes adicionais seguintes serão instalados:
+  python3-attr python3-docker python3-dockerpty python3-docopt python3-dotenv python3-jsonschema python3-pyrsistent python3-texttable python3-websocket
+Pacotes sugeridos:
+  python-attr-doc python-jsonschema-doc
+Os NOVOS pacotes a seguir serão instalados:
+  docker-compose python3-attr python3-docker python3-dockerpty python3-docopt python3-dotenv python3-jsonschema python3-pyrsistent python3-texttable python3-websocket
+0 pacotes atualizados, 10 pacotes novos instalados, 0 a serem removidos e 0 não atualizados.
+É preciso baixar 432 kB de arquivos.
+Depois desta operação, 2.277 kB adicionais de espaço em disco serão usados.
+Obter:1 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-websocket all 1.2.3-1 [34,7 kB]
+Obter:2 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-docker all 5.0.3-1 [89,3 kB]
+Obter:3 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-dockerpty all 0.4.1-2 [11,1 kB]
+Obter:4 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-docopt all 0.6.2-4 [26,9 kB]
+Obter:5 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-dotenv all 0.19.2-1 [20,5 kB]
+Obter:6 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-attr all 21.2.0-1 [44,0 kB]
+Obter:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-pyrsistent amd64 0.18.1-1build1 [55,5 kB]
+Obter:8 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-jsonschema all 3.2.0-0ubuntu2 [43,1 kB]
+Obter:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 python3-texttable all 1.6.4-1 [11,4 kB]
+Obter:10 http://archive.ubuntu.com/ubuntu jammy/universe amd64 docker-compose all 1.29.2-1 [95,8 kB]
+Baixados 432 kB em 3s (160 kB/s)           
+A seleccionar pacote anteriormente não seleccionado python3-websocket.
+(Lendo banco de dados ... 804759 ficheiros e directórios actualmente instalados.)
+A preparar para desempacotar .../0-python3-websocket_1.2.3-1_all.deb ...
+A descompactar python3-websocket (1.2.3-1) ...
+A seleccionar pacote anteriormente não seleccionado python3-docker.
+A preparar para desempacotar .../1-python3-docker_5.0.3-1_all.deb ...
+A descompactar python3-docker (5.0.3-1) ...
+A seleccionar pacote anteriormente não seleccionado python3-dockerpty.
+A preparar para desempacotar .../2-python3-dockerpty_0.4.1-2_all.deb ...
+A descompactar python3-dockerpty (0.4.1-2) ...
+A seleccionar pacote anteriormente não seleccionado python3-docopt.
+A preparar para desempacotar .../3-python3-docopt_0.6.2-4_all.deb ...
+A descompactar python3-docopt (0.6.2-4) ...
+A seleccionar pacote anteriormente não seleccionado python3-dotenv.
+A preparar para desempacotar .../4-python3-dotenv_0.19.2-1_all.deb ...
+A descompactar python3-dotenv (0.19.2-1) ...
+A seleccionar pacote anteriormente não seleccionado python3-attr.
+A preparar para desempacotar .../5-python3-attr_21.2.0-1_all.deb ...
+A descompactar python3-attr (21.2.0-1) ...
+A seleccionar pacote anteriormente não seleccionado python3-pyrsistent:amd64.
+A preparar para desempacotar .../6-python3-pyrsistent_0.18.1-1build1_amd64.deb ...
+A descompactar python3-pyrsistent:amd64 (0.18.1-1build1) ...
+A seleccionar pacote anteriormente não seleccionado python3-jsonschema.
+A preparar para desempacotar .../7-python3-jsonschema_3.2.0-0ubuntu2_all.deb ...
+A descompactar python3-jsonschema (3.2.0-0ubuntu2) ...
+A seleccionar pacote anteriormente não seleccionado python3-texttable.
+A preparar para desempacotar .../8-python3-texttable_1.6.4-1_all.deb ...
+A descompactar python3-texttable (1.6.4-1) ...
+A seleccionar pacote anteriormente não seleccionado docker-compose.
+A preparar para desempacotar .../9-docker-compose_1.29.2-1_all.deb ...
+A descompactar docker-compose (1.29.2-1) ...
+Configurando python3-dotenv (0.19.2-1) ...
+Configurando python3-attr (21.2.0-1) ...
+Configurando python3-texttable (1.6.4-1) ...
+Configurando python3-docopt (0.6.2-4) ...
+Configurando python3-pyrsistent:amd64 (0.18.1-1build1) ...
+Configurando python3-websocket (1.2.3-1) ...
+Configurando python3-dockerpty (0.4.1-2) ...
+Configurando python3-docker (5.0.3-1) ...
+Configurando python3-jsonschema (3.2.0-0ubuntu2) ...
+Configurando docker-compose (1.29.2-1) ...
+A processar 'triggers' para man-db (2.10.2-1) ...
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/5_compose$ docker compose version
+docker: 'compose' is not a docker command.
+See 'docker --help'
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/5_compose$ ^C
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/5_compose$ docker-compose --version
+Docker Compose version v2.39.4
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/5_compose$ 
