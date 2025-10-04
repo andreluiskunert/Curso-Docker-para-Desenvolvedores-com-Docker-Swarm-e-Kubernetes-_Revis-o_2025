@@ -1,0 +1,31 @@
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql
+    env_file:
+      - ./config/db.env
+    ports:
+      - "3307:3306"
+
+  wordpress:
+    image: wordpress:latest
+    depends_on:
+      - db
+    restart: always
+    ports:
+      - "8000:80"
+    env_file:
+      - ./config/db.env
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: andre
+      WORDPRESS_DB_PASSWORD: secret
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - wordpress_data:/var/www/html
+
+volumes:
+  db_data:
+  wordpress_data:
