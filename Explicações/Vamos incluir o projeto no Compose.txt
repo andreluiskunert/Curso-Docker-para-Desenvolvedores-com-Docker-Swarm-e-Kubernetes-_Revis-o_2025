@@ -1,0 +1,4 @@
+Vamos incluir o projeto no Compose
+●Agora vamos inserir o nosso projeto da última seção no Compose;
+●Para verificar na prática como fazer uma transferência de Dockerfiles
+para Docker Compose!
