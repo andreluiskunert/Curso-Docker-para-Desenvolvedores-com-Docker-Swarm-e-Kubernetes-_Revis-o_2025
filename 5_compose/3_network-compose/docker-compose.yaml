@@ -1,49 +1,29 @@
-# version: '3.3'
-
-# services: 
-#   db: 
-#     image: mysqlcompose
-#     restart: always
-#     env_file:
-#      - ./config/db.env
-#     ports:
-#       - "3306:3306"
-#     networks:
-#       - dockercompose
-#     backend:
-#       depends_on:
-#         - db
-#       image: flaskcompose
-#       ports: 
-#         - "5000:5000"
-#       restart: always
-#       networks:
-#         - dockercompose
-# networks:
-#   dockercompose:
-
-version: '3.3'
-
-services: 
-  db: 
-    image: mysqlcompose
+services:
+  db: # Container de MySQL
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
     restart: always
     env_file:
       - ./config/db.env
-    ports:
-      - "3306:3306"
     networks:
-      - dockercompose
+      - backend
 
-  backend:     # agora está fora de "db"
+  wordpress:
     depends_on:
       - db
-    image: flaskcompose
-    ports: 
-      - "5000:5000"
+    image: wordpress:latest
+    ports:
+      - "8000:80"
     restart: always
+    env_file:
+      - ./config/wp.env
     networks:
-      - dockercompose
+      - backend
+
+volumes:
+  db_data: {}
 
 networks:
-  dockercompose:
+  backend:
+    driver: bridge
