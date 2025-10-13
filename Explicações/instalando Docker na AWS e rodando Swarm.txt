@@ -1,0 +1,136 @@
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-p
+ara-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-par
+a-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ sudo yum install docker
+[sudo] senha para desenvolvedor:        
+sudo: yum: comando não encontrado
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ sudo apt update
+sudo apt install -y ca-certificates curl gnupg lsb-release
+Atingido:2 https://packages.microsoft.com/repos/code stable InRelease                                                                                                        
+Atingido:3 https://download.docker.com/linux/ubuntu jammy InRelease                                                                                                          
+Atingido:1 https://repository.spotify.com stable InRelease                                                                                                                   
+Ign:4 http://packages.linuxmint.com virginia InRelease                                                                                                                       
+Atingido:5 http://archive.ubuntu.com/ubuntu jammy InRelease                                                                                                                
+Obter:6 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]                                                                                                
+Atingido:7 http://packages.linuxmint.com virginia Release                                                                                                                    
+Atingido:8 https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 InRelease                                                                                               
+Obter:9 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]                                                 
+Atingido:10 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease                   
+Atingido:12 http://archive.ubuntu.com/ubuntu jammy-backports InRelease                           
+Baixados 257 kB em 2s (146 kB/s)
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+Todos os pacotes estão atualizados
+N: Skipping acquire of configured file 'multiverse/binary-i386/Packages' as repository 'https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 InRelease' doesn't support architecture 'i386'
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+lsb-release já é a versão mais recente (11.1.0ubuntu4).
+ca-certificates já é a versão mais recente (20240203~22.04.1).
+curl já é a versão mais recente (7.81.0-1ubuntu1.21).
+gnupg já é a versão mais recente (2.2.27-3ubuntu2.4).
+Os seguintes pacotes foram instalados automaticamente e já não são necessários:
+  bridge-utils gconf-service gconf-service-backend gconf2-common gyp libgconf-2-4 libjs-events libjs-inherits libjs-is-typedarray libjs-psl libjs-source-map
+  libjs-sprintf-js libjs-typedarray-to-buffer libnode-dev libuv1-dev linux-headers-5.15.0-143 linux-headers-5.15.0-143-generic linux-headers-5.15.0-144
+  linux-headers-5.15.0-144-generic linux-headers-5.15.0-151 linux-headers-5.15.0-151-generic linux-headers-5.15.0-152 linux-headers-5.15.0-152-generic
+  linux-headers-5.15.0-153 linux-headers-5.15.0-153-generic linux-image-5.15.0-143-generic linux-image-5.15.0-144-generic linux-image-5.15.0-151-generic
+  linux-image-5.15.0-152-generic linux-image-5.15.0-153-generic linux-modules-5.15.0-143-generic linux-modules-5.15.0-144-generic linux-modules-5.15.0-151-generic
+  linux-modules-5.15.0-152-generic linux-modules-5.15.0-153-generic linux-modules-extra-5.15.0-143-generic linux-modules-extra-5.15.0-144-generic
+  linux-modules-extra-5.15.0-151-generic linux-modules-extra-5.15.0-152-generic linux-modules-extra-5.15.0-153-generic node-abbrev node-ansi-regex node-ansi-styles
+  node-ansistyles node-are-we-there-yet node-arrify node-asap node-asynckit node-balanced-match node-brace-expansion node-chownr node-clean-yaml-object node-color-convert
+  node-color-name node-commander node-core-util-is node-decompress-response node-delayed-stream node-delegates node-depd node-diff node-encoding node-end-of-stream
+  node-err-code node-escape-string-regexp node-fancy-log node-foreground-child node-fs.realpath node-function-bind node-get-stream node-glob node-growl node-has-flag
+  node-has-unicode node-hosted-git-info node-iconv-lite node-iferr node-imurmurhash node-indent-string node-inflight node-inherits node-ini node-ip node-ip-regex
+  node-is-buffer node-is-plain-obj node-is-typedarray node-isarray node-isexe node-json-parse-better-errors node-jsonparse node-kind-of node-lodash-packages
+  node-lowercase-keys node-lru-cache node-mimic-response node-minimatch node-minimist node-minipass node-mute-stream node-negotiator node-npm-bundled node-once node-osenv
+  node-p-cancelable node-p-map node-path-is-absolute node-process-nextick-args node-promise-inflight node-promise-retry node-promzard node-pump node-quick-lru node-read
+  node-readable-stream node-resolve node-retry node-safe-buffer node-set-blocking node-signal-exit node-slash node-slice-ansi node-source-map node-spdx-correct
+  node-spdx-exceptions node-spdx-expression-parse node-spdx-license-ids node-sprintf-js node-stealthy-require node-string-decoder node-supports-color node-text-table
+  node-time-stamp node-tmatch node-typedarray-to-buffer node-universalify node-util-deprecate node-validate-npm-package-license node-webidl-conversions node-whatwg-fetch
+  node-wrappy node-yallist php8.1-bcmath php8.1-mysql ubuntu-fan
+Utilize 'sudo apt autoremove' para os remover.
+0 pacotes atualizados, 0 pacotes novos instalados, 0 a serem removidos e 0 não atualizados.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ sudo mkdir -p /etc/apt/keyrings
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+O ficheiro '/etc/apt/keyrings/docker.gpg' existe. Sobrescrever (s/N) s
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu jammy stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ sudo apt update
+Atingido:1 https://repository.spotify.com stable InRelease                                                                                                                   
+Atingido:2 https://download.docker.com/linux/ubuntu jammy InRelease                                                                                                          
+Ign:3 http://packages.linuxmint.com virginia InRelease                                                                                                                       
+Atingido:4 http://archive.ubuntu.com/ubuntu jammy InRelease                                                                                                                  
+Atingido:5 http://security.ubuntu.com/ubuntu jammy-security InRelease                                                                                                        
+Atingido:6 http://packages.linuxmint.com virginia Release                                                                                                                    
+Atingido:7 https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 InRelease                                                                                               
+Atingido:8 http://archive.ubuntu.com/ubuntu jammy-updates InRelease                                                                                                
+Atingido:9 http://archive.ubuntu.com/ubuntu jammy-backports InRelease                                         
+Atingido:10 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease                                
+Atingido:12 https://packages.microsoft.com/repos/code stable InRelease           
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+Todos os pacotes estão atualizados
+N: Skipping acquire of configured file 'multiverse/binary-i386/Packages' as repository 'https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 InRelease' doesn't support architecture 'i386'
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+containerd.io já é a versão mais recente (1.7.28-1~ubuntu.22.04~jammy).
+docker-buildx-plugin já é a versão mais recente (0.29.1-1~ubuntu.22.04~jammy).
+docker-ce-cli já é a versão mais recente (5:28.5.1-1~ubuntu.22.04~jammy).
+docker-ce já é a versão mais recente (5:28.5.1-1~ubuntu.22.04~jammy).
+docker-compose-plugin já é a versão mais recente (2.40.0-1~ubuntu.22.04~jammy).
+Os seguintes pacotes foram instalados automaticamente e já não são necessários:
+  bridge-utils gconf-service gconf-service-backend gconf2-common gyp libgconf-2-4 libjs-events libjs-inherits libjs-is-typedarray libjs-psl libjs-source-map
+  libjs-sprintf-js libjs-typedarray-to-buffer libnode-dev libuv1-dev linux-headers-5.15.0-143 linux-headers-5.15.0-143-generic linux-headers-5.15.0-144
+  linux-headers-5.15.0-144-generic linux-headers-5.15.0-151 linux-headers-5.15.0-151-generic linux-headers-5.15.0-152 linux-headers-5.15.0-152-generic
+  linux-headers-5.15.0-153 linux-headers-5.15.0-153-generic linux-image-5.15.0-143-generic linux-image-5.15.0-144-generic linux-image-5.15.0-151-generic
+  linux-image-5.15.0-152-generic linux-image-5.15.0-153-generic linux-modules-5.15.0-143-generic linux-modules-5.15.0-144-generic linux-modules-5.15.0-151-generic
+  linux-modules-5.15.0-152-generic linux-modules-5.15.0-153-generic linux-modules-extra-5.15.0-143-generic linux-modules-extra-5.15.0-144-generic
+  linux-modules-extra-5.15.0-151-generic linux-modules-extra-5.15.0-152-generic linux-modules-extra-5.15.0-153-generic node-abbrev node-ansi-regex node-ansi-styles
+  node-ansistyles node-are-we-there-yet node-arrify node-asap node-asynckit node-balanced-match node-brace-expansion node-chownr node-clean-yaml-object node-color-convert
+  node-color-name node-commander node-core-util-is node-decompress-response node-delayed-stream node-delegates node-depd node-diff node-encoding node-end-of-stream
+  node-err-code node-escape-string-regexp node-fancy-log node-foreground-child node-fs.realpath node-function-bind node-get-stream node-glob node-growl node-has-flag
+  node-has-unicode node-hosted-git-info node-iconv-lite node-iferr node-imurmurhash node-indent-string node-inflight node-inherits node-ini node-ip node-ip-regex
+  node-is-buffer node-is-plain-obj node-is-typedarray node-isarray node-isexe node-json-parse-better-errors node-jsonparse node-kind-of node-lodash-packages
+  node-lowercase-keys node-lru-cache node-mimic-response node-minimatch node-minimist node-minipass node-mute-stream node-negotiator node-npm-bundled node-once node-osenv
+  node-p-cancelable node-p-map node-path-is-absolute node-process-nextick-args node-promise-inflight node-promise-retry node-promzard node-pump node-quick-lru node-read
+  node-readable-stream node-resolve node-retry node-safe-buffer node-set-blocking node-signal-exit node-slash node-slice-ansi node-source-map node-spdx-correct
+  node-spdx-exceptions node-spdx-expression-parse node-spdx-license-ids node-sprintf-js node-stealthy-require node-string-decoder node-supports-color node-text-table
+  node-time-stamp node-tmatch node-typedarray-to-buffer node-universalify node-util-deprecate node-validate-npm-package-license node-webidl-conversions node-whatwg-fetch
+  node-wrappy node-yallist php8.1-bcmath php8.1-mysql ubuntu-fan
+Utilize 'sudo apt autoremove' para os remover.
+0 pacotes atualizados, 0 pacotes novos instalados, 0 a serem removidos e 0 não atualizados.
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ sudo docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+17eec7bbc9d7: Pull complete 
+Digest: sha256:54e66cc1dd1fcb1c3c58bd8017914dbed8701e2d8c74d9262e26bd9cc1642d31
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ sudo usermod -aG docker $USER
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025$ 
