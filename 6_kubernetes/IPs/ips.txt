@@ -1,11 +1,11 @@
 #Node1
-ec2-35-183-174-39.ca-central-1.compute.amazonaws.com
+ssh -i "node1.pem" ec2-35-183-174-39.ca-central-1.compute.amazonaws.com
 #Node2:
-ec2-35-182-5-137.ca-central-1.compute.amazonaws.com
+ssh -i "node2.pem" ec2-35-182-5-137.ca-central-1.compute.amazonaws.com
 #Node3:
-ec2-15-223-75-202.ca-central-1.compute.amazonaws.com
+ssh -i "node3.pem" ec2-15-223-75-202.ca-central-1.compute.amazonaws.com
 #Node4:
-ec2-15-222-253-141.ca-central-1.compute.amazonaws.com
+ssh -i "node4.pem" ec2-15-222-253-141.ca-central-1.compute.amazonaws.com
 § TOKEN PARA JOIN
  docker swarm join --token SWMTKN-1-4dvgktz10myj3qj8rpfop3fxu6k76re40t32mzncrw4rsw1xny-7u0db7vsrz3fgd1odq533i0i1 10.130.21.93:2377
 
