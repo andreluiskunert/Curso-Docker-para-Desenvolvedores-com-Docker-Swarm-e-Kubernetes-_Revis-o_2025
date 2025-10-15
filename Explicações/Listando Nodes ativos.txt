@@ -4,3 +4,8 @@ Listando Nodes ativos
 ●Podemos assim monitorar o que o Swarm está orquestrando;
 ●Este comando será de grande utilidade a medida que formos adicionando
 serviços no Swarm;
+ex.:
+15/10/2025_20:00:00 h+|-
+
+descrito passa a passo
+... 

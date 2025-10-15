@@ -6,3 +6,5 @@ Podemos adicionar um novo serviço com o comando: docker swarm join
 ●Esta nova máquina entra na hierarquia como Worker;
 ●Todas as ações (Tasks) utilizadas na Manager, serão replicadas em
 Nodes que foram adicionados com join;
+e.:
+15/10/2025 _20:04:00 h+|-
