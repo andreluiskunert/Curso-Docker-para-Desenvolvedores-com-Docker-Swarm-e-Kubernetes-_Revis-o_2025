@@ -1,0 +1,7 @@
+Atualizar parâmetro
+●Podemos atualizar as configurações dos nossos nodes;
+●Vamos utilizar o comando: docker service update --image <IMAGEM>
+<SERVICO>
+●
+Desta forma apenas os nodes que estão com o status active receberão
+atualizações
