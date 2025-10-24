@@ -4,3 +4,5 @@ Acessando a dashboard do Kubernetes
 e etc;
 ●Vamos acessar com o comando: minikube dashboard
 ●Ou para apenas obter a URL: minibuke dashboard --url
+ex.: 
+§ Explica
