@@ -6,3 +6,4 @@ entre os servidores;
 ●A partir da criação do deployment teremos containers rodando;
 ●Vamos precisar de uma imagem no Hub do Docker, para gerar um
 Deployment;
+Explica sobre o assunto...
