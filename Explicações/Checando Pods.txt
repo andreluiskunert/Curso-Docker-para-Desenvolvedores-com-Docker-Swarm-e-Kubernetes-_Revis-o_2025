@@ -6,3 +6,13 @@ containers realmente são executados;
 ●E para saber mais detalhes deles: kubectl describe pods
 ●Recebemos o status dos Pods que estão ligados e também
 informações importantes sobre eles
+EX.:
+quinta-feira 30/10
+ kubectl describe pods
+E1030 20:37:53.937801   13347 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://192.168.49.2:8443/api?timeout=32s\": dial tcp 192.168.49.2:8443: connect: no route to host"
+E1030 20:37:57.008283   13347 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://192.168.49.2:8443/api?timeout=32s\": dial tcp 192.168.49.2:8443: connect: no route to host"
+E1030 20:38:00.081704   13347 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://192.168.49.2:8443/api?timeout=32s\": dial tcp 192.168.49.2:8443: connect: no route to host"
+E1030 20:38:03.153298   13347 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://192.168.49.2:8443/api?timeout=32s\": dial tcp 192.168.49.2:8443: connect: no route to host"
+E1030 20:38:06.224919   13347 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://192.168.49.2:8443/api?timeout=32s\": dial tcp 192.168.49.2:8443: connect: no route to host"
+Unable to connect to the server: dial tcp 192.168.49.2:8443: connect: no route to host
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ 

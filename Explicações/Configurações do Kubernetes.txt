@@ -3,3 +3,38 @@ Configurações do Kubernetes
 ●O comando é: kubectl config view
 ●No nosso caso: vamos receber informações importantes baseadas no
 Minikube, que é por onde o Kubernetes está sendo executado;
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ kubectl config view 
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: /home/desenvolvedor/.minikube/ca.crt
+    extensions:
+    - extension:
+        last-update: Wed, 29 Oct 2025 21:44:10 -03
+        provider: minikube.sigs.k8s.io
+        version: v1.37.0
+      name: cluster_info
+    server: https://192.168.49.2:8443
+  name: minikube
+contexts:
+- context:
+    cluster: minikube
+    extensions:
+    - extension:
+        last-update: Wed, 29 Oct 2025 21:44:10 -03
+        provider: minikube.sigs.k8s.io
+        version: v1.37.0
+      name: context_info
+    namespace: default
+    user: minikube
+  name: minikube
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: minikube
+  user:
+    client-certificate: /home/desenvolvedor/.minikube/profiles/minikube/client.crt
+    client-key: /home/desenvolvedor/.minikube/profiles/minikube/client.key
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto
