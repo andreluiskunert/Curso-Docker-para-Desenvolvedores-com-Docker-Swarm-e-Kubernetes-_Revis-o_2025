@@ -1,0 +1,18 @@
+Checar número de réplicas
+●
+Além do get pods e da Dashboard, temos mais um comando para checar
+réplicas;
+●Que é o: kubectl get rs
+●Desta maneira temos os status das réplicas dos projetos;
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ kubectl get rs
+NAME                         DESIRED   CURRENT   READY   AGE
+flask-deployment-b67fb744f   5         5         5       3d23h
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ kubectl get pods
+NAME                               READY   STATUS    RESTARTS        AGE
+flask-deployment-b67fb744f-5jm6k   1/1     Running   0               5m59s
+flask-deployment-b67fb744f-czxgx   1/1     Running   0               5m59s
+flask-deployment-b67fb744f-dp578   1/1     Running   0               5m59s
+flask-deployment-b67fb744f-mdn2j   1/1     Running   3 (4h17m ago)   3d23h
+flask-deployment-b67fb744f-qnrs6   1/1     Running   0               5m59s
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ 

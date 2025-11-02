@@ -1,0 +1,24 @@
+Replicando nossa aplicação
+●
+Vamos aprender agora a como utilizar outros Pods, replicando assim a
+nossa aplicação;
+●
+O comando é: kubectl scale deployment/<NOME>
+--replicas=<NUMERO>
+●Podemos agora verificar no Dashboard o aumento de Pods;
+●E também com o comando de: kubectl get pods
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ kubectl scale deployment/flask-deployment --replicas=5
+deployment.apps/flask-deployment scaled
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ kubectl get pods
+NAME                               READY   STATUS    RESTARTS        AGE
+flask-deployment-b67fb744f-5jm6k   1/1     Running   0               28s
+flask-deployment-b67fb744f-czxgx   1/1     Running   0               28s
+flask-deployment-b67fb744f-dp578   1/1     Running   0               28s
+flask-deployment-b67fb744f-mdn2j   1/1     Running   3 (4h12m ago)   3d23h
+flask-deployment-b67fb744f-qnrs6   1/1     Running   0               28s
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ minikube dashboard
+🤔  Verifying dashboard health ...
+🚀  Launching proxy ...
+🤔  Verifying proxy health ...
+🎉  Opening http://127.0.0.1:39443/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
