@@ -1,0 +1,30 @@
+Diminuindo a escala
+●Podemos facilmente também reduzir o número de Pods;
+●Esta técnica é chamada de scale down;
+●O comando é o mesmo, porém colocamos menos réplicas e o Kubernetes
+faz o resto;
+●
+Comando: kubectl scale deployment/<NOME>
+--replicas=<NUMERO_MENOR>
+Ex.:
+-> 
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ minikube service flask-deployment
+
+❌  Exiting due to SVC_NOT_FOUND: Service 'flask-deployment' was not found in 'default' namespace.
+You may select another namespace by using 'minikube service flask-deployment -n <namespace>'. Or list out all the services using 'minikube service list'
+
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ kubectl get deployments
+kubectl get services
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+flask-deployment   3/3     3            3           5d
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   7d23h
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ minikube service flask-deployment
+
+❌  Exiting due to SVC_NOT_FOUND: Service 'flask-deployment' was not found in 'default' namespace.
+You may select another namespace by using 'minikube service flask-deployment -n <namespace>'. Or list out all the services using 'minikube service list'
+
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ kubectl get services
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   7d23h
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ 

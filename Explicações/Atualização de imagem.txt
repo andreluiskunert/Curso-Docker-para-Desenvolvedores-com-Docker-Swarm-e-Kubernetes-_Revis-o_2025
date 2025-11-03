@@ -1,0 +1,54 @@
+Atualização de imagem
+●
+Para atualizar a imagem vamos precisar do nome do container, isso é
+dado na Dashboard dentro do Pod;
+●
+E também a nova imagem deve ser uma outra versão da atual,
+precisamos subir uma nova tag no Hub;
+●
+Depois utilizamos o comando: kubectl set image deployment/<NOME>
+<NOME_CONTAINER>=<NOVA_IMAGEM>
+Ex.:
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ docker build -t alktecno/flask-kub-projeto:2 .
+[+] Building 0.1s (10/10) FINISHED                                                                                                                             docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                     0.0s
+ => => transferring dockerfile: 253B                                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/python:3                                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                                          0.0s
+ => [1/5] FROM docker.io/library/python:3                                                                                                                                0.0s
+ => [internal] load build context                                                                                                                                        0.0s
+ => => transferring context: 127B                                                                                                                                        0.0s
+ => CACHED [2/5] RUN apt-get update -y &&     apt-get install -y python3-pip python3-dev &&     pip3 install --upgrade pip                                               0.0s
+ => CACHED [3/5] WORKDIR /app                                                                                                                                            0.0s
+ => CACHED [4/5] RUN pip install Flask                                                                                                                                   0.0s
+ => CACHED [5/5] COPY . .                                                                                                                                                0.0s
+ => exporting to image                                                                                                                                                   0.0s
+ => => exporting layers                                                                                                                                                  0.0s
+ => => writing image sha256:525d241f64bd808dde9f7a52be6aa577d07b5e56cab8e3a9b2e68852465a1057                                                                             0.0s
+ => => naming to docker.io/alktecno/flask-kub-projeto:2                                                                                                                  0.0s
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ docker push alktecno/flask-kub-projeto:2
+The push refers to repository [docker.io/alktecno/flask-kub-projeto]
+080a4d807bf2: Pushed 
+c46e31a39220: Layer already exists 
+073d7ae8ae21: Layer already exists 
+1a08f74aca4b: Layer already exists 
+bafcf71d651a: Layer already exists 
+d52ca6ce2fa3: Layer already exists 
+a9410d27207a: Layer already exists 
+08e14ec5b749: Layer already exists 
+0dd5860cbc60: Layer already exists 
+607ddfe5f3c3: Layer already exists 
+185e04da9d94: Layer already exists 
+2: digest: sha256:cb5a4e991b97ef9115d1b9785331da6252bd4d56250e97f316d07a8e7bb1d60a size: 2632
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ kubectl set image deployment/flask-deployment flask-kub-projeto=alktecno/flask-kub-projeto:2
+deployment.apps/flask-deployment image updated
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ kubectl get deployment
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+flask-deployment   3/3     3            3           5d
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ kubectl get pods
+NAME                                READY   STATUS    RESTARTS   AGE
+flask-deployment-7fdd54ff89-5qcx8   1/1     Running   0          51s
+flask-deployment-7fdd54ff89-6s4wf   1/1     Running   0          45s
+flask-deployment-7fdd54ff89-mvxl4   1/1     Running   0          40s
+desenvolvedor@desenvolvedor-ThinkPad-T440p:~/Cursos_Hora de Codar/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/Curso-Docker-para-Desenvolvedores-com-Docker-Swarm-e-Kubernetes-_Revis-o_2025/6_kubernetes/1_projeto$ 

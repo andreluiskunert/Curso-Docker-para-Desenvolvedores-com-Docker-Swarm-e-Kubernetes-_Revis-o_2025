@@ -1,0 +1,5 @@
+Resgatar o IP do serviço
+●Podemos sempre relembrar o IP/URL do nosso serviço;
+●O comando é: minikube service --url <NOME>
+●Desta maneira a URL é exibida no terminal;
+Ex:
