@@ -1,0 +1,5 @@
+Executando arquivo de Deployment
+●Vamos então executar nosso arquivo de Deployment!
+●O comando é: kubectl apply -f <ARQUIVO>
+●Desta maneira o Deployment será criado conforme configurado no arquivo
+.yaml;
